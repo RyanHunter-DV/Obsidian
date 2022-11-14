@@ -1,3 +1,3 @@
 # links
-- [[axi4/vip-Overview]], the overview of an axi4 vip
+- [[amba/axi4/vip-Overview]], the overview of an axi4 vip
 - 
