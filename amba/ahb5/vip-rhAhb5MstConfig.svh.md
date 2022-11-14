@@ -50,3 +50,9 @@ This task will the the interface controller's `waitResetChanged`
 ifCtrl.getResetChanged(s);
 ```
 [[vip-rhAhb5IfControlBase.svh#getResetChanged]]
+
+## getHREADY
+A function to get current HREADY value from interface, the return value is a logic.
+## getHRESP
+Get current signal value of HRESP from interface, the return value is a logic.
+#TODO 

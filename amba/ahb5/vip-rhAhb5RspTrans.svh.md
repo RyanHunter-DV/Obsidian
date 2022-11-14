@@ -6,5 +6,6 @@ The transaction of responses information recording and storing.
 ```systemverilog
 bit [1:0] resp;
 bit exokay;
+bit iswrite;
 bit [`RHAHB5_DW_MAX-1:0] rdata;
 ```
