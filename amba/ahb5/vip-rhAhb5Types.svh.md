@@ -3,15 +3,17 @@
 ```systemverilog
 `define RHAHB5_AW_MAX 32
 `define RHAHB5_DW_MAX 256
+
 ```
 **field**
-```
+```systemverilog
 typedef enum bit[1:0] {
 	AHB5_IDLE = 2'h0,
 	AHB5_BUSY = 2'h1,
 	AHB5_NONSEQ = 2'h2,
 	AHB5_SEQ = 2'h3
 } rhahb5_htrans_enum;
+
 ```
 **field**
 ```systemverilog
@@ -25,6 +27,7 @@ typedef enum bit[2:0] {
 	AHB5_WRAP16,
 	AHB5_INCR16
 } rhahb5_hburst_enum;
+
 ```
 ## RhAhb5TransBeat
 **field**
@@ -42,6 +45,5 @@ typedef struct {
 	bit lock;
 	bit nonsec;
 	bit excl;
-	
 } RhAhb5TransBeat;
 ```

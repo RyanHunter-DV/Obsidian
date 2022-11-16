@@ -64,9 +64,9 @@ mon.config = config;
 ```
 reference:
 [[vip-rhAhb5MstDriver.svh]]
-[[src-rhAhb5MstSeqr.svh]], #TODO 
+[[amba/ahb5/vip-rhAhb5MstSeqr.svh]], #TODO 
 [[vip-rhAhb5MstConfig.svh]]
-[[vip-rhAhb5MstMonitor.svh]], #TODO 
+[[vip-rhAhb5MstMonitor.svh]]
 ## connect_phase
 In connect phase, following ports will be connected:
 - reset ports from monitor to driver
