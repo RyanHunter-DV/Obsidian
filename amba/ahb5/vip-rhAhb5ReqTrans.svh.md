@@ -12,7 +12,7 @@ bit nonsec;
 bit excl;
 bit [3:0] master;
 bit [1:0] trans[];
-bit [`RHAHB5_DW_MAX=1:0] wdata[];
+bit [`RHAHB5_DW_MAX-1:0] wdata[];
 bit write;
 ```
 macros defined in [[vip-rhAhb5Types.svh]].

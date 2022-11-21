@@ -16,13 +16,13 @@ Which will directly call interface's signal to drive. Such as:
 ```systemverilog
 vif.HWDATA <= beat.wdata[DW-1:0];
 ```
-**vtask** `driveDataPhase(RhAhb5TransBeat b,output bit isError)`
+**vtask** `driveDataPhase(ref RhAhb5TransBeat b,output bit isError)`
 **proc**
 ```
 ```
 ## waitDataPhase
 This is similar with `driveDataPhase`, but it won't drive any wdata, instead, it waits the ready and gets the `HRDATA`, which reserved for getting response.
-**vtask** `waitDataPhase(ref RhAhb5TransBeat b,bit isError)`
+**vtask** `waitDataPhase(ref RhAhb5TransBeat b,output bit isError)`
 **proc**
 ```
 ```

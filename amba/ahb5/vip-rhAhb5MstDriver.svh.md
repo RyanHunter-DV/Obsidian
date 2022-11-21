@@ -167,7 +167,7 @@ reference:
 
 ## splitTransToBeats
 A function to split the whole transaction into many beats that has one address, htrans and data etc, information.
-**func** `splitTransToBeats(REQ tr,ref RhAhb5TransBeat beats[$])`
+**func** `void splitTransToBeats(REQ tr,ref RhAhb5TransBeat beats[$])`
 **proc**
 ```systemverilog
 foreach (tr.trans[i]) begin

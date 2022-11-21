@@ -14,19 +14,7 @@ RhAhb5IfControlBase ifCtrl;
 **proc**
 ```systemverilog
 bit busy = outstanding? 1'b1 : 1'b0;
-ifCtrl.driveAddressPhase(
-	b.burst,
-	b.trans,
-	b.master,
-	b.write,
-	b.lock,
-	b.excl,
-	b.nonsec,
-	b.addr,
-	b.hsize,
-	b.prot,
-	busy
-);
+ifCtrl.driveAddressPhase(b,busy);
 ```
 reference: [[vip-rhAhb5IfControlBase.svh#driveAddressPhase]];
 ### sendDataPhase

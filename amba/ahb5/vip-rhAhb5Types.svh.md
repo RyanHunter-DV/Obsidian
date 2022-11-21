@@ -8,24 +8,24 @@
 **field**
 ```systemverilog
 typedef enum bit[1:0] {
-	AHB5_IDLE = 2'h0,
-	AHB5_BUSY = 2'h1,
-	AHB5_NONSEQ = 2'h2,
-	AHB5_SEQ = 2'h3
+	RHAHB5_IDLE = 2'h0,
+	RHAHB5_BUSY = 2'h1,
+	RHAHB5_NONSEQ = 2'h2,
+	RHAHB5_SEQ = 2'h3
 } rhahb5_htrans_enum;
 
 ```
 **field**
 ```systemverilog
 typedef enum bit[2:0] {
-	AHB5_SINGLE,
-	AHB5_INCR,
-	AHB5_WRAP4,
-	AHB5_INCR4,
-	AHB5_WRAP8,
-	AHB5_INCR8,
-	AHB5_WRAP16,
-	AHB5_INCR16
+	RHAHB5_SINGLE,
+	RHAHB5_INCR,
+	RHAHB5_WRAP4,
+	RHAHB5_INCR4,
+	RHAHB5_WRAP8,
+	RHAHB5_INCR8,
+	RHAHB5_WRAP16,
+	RHAHB5_INCR16
 } rhahb5_hburst_enum;
 
 ```

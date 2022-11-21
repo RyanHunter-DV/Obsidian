@@ -2,6 +2,7 @@
 - [[#Base Architecture]], indicates the basic vip package and file structures.
 - [[#Master Device]], act as an ahb master.
 - [[#Slave Device]], act as an ahb slave.
+- [[#VIP Test]], #TBD 
 
 # Base Architecture
 #TBD 
@@ -19,7 +20,7 @@ Using examples are located in [[#Using Masters]].
 A master devices contains following components/objects:
 - [[vip-rhAhb5MstAgent.svh]], this is the basic master agent where this master device actually defined.
 - [[vip-rhAhb5MstDriver.svh]], the driver component specifically for master.
-- [[src-rhAhb5MstSeqr.svh]], the master sequencer.
+- [[vip-rhAhb5MstSeqr.svh]], the master sequencer.
 - [[vip-rhAhb5MstMonitor.svh]], the monitor component.
 - [[vip-rhAhb5MstConfig.svh]], the master configure table.
 ## configure a master device
@@ -64,3 +65,9 @@ seq.randomize() with {
 };
 seq.start(dev.seqr);
 ```
+
+# VIP Test
+## master only test
+- compile pass
+- base transactions driven on interface
+- build up base test env

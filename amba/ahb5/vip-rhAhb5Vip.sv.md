@@ -11,6 +11,7 @@ rhAhb5Types.svh
 rhAhb5IfControlBase.svh
 rhAhb5IfControl.svh
 
+rhAhb5TransBase.svh
 rhAhb5ReqTrans.svh
 rhAhb5RspTrans.svh
 
