@@ -29,7 +29,7 @@ The driver, sequencer, and monitor will be setup according to the `is_active` fi
 For details, see [[#setupSubComponents]].
 **build**
 ```systemverilog
-setupConfigureTable();
+__setupConfigureTable__();
 setupSubComponents();
 ```
 ## createConfig
@@ -42,7 +42,7 @@ return config;
 ```
 ## setupConfigureTable
 called when in `build_phase`, re-create the `config` field according to the existing one.
-**func** `void setupConfigureTable()`
+**lfunc** `void __setupConfigureTable__()`
 **proc**
 ```systemverilog
 if (!uvm_config_db#(RhAhb5IfControlBase)::get(null,"*",config.interfacePath,config.ifCtrl))

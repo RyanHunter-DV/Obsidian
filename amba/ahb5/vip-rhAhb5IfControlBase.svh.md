@@ -32,3 +32,16 @@ A virtual task in base controller. In controller, it will wait the reset signal 
 **vtask** `getResetChanged(output logic s)`
 ```systemverilog
 ```
+## sync
+A virtual task, will repeat specific clock cycles
+**vtask** `sync(int cycle)`
+**proc**
+```systemverilog
+// overridden by sub class
+```
+
+## getSignal
+**vfunc** `uvm_bitstream_t getSignal(string signame)`
+**proc**
+```
+```

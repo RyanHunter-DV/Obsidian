@@ -14,8 +14,16 @@ The `RHAhb5Vip` locates in ahb5 of vips project, it has file structures:
 -   `./rhAhb5Vip.sv`, the package file of the whole axi4 vip, for details, see [[vip-rhAhb5Vip.sv]]
 -   `./test/`, dir for self tests, mostly tested by self connection between master and slave.
 
+# Top Device
+#TBD #TODO 
+need a top device that can be instantiated by user and configure to master or slave device, like:
+```systemverilog
+RhAhb5Vip mst;
+RhAhb5Vip slv;
+xxxx
+```
 # Master Device
-#TBD #High
+#TBD 
 Using examples are located in [[#Using Masters]].
 A master devices contains following components/objects:
 - [[vip-rhAhb5MstAgent.svh]], this is the basic master agent where this master device actually defined.

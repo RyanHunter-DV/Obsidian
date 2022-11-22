@@ -11,7 +11,7 @@ This is an overall section about what and how many features the master driver ha
 # Source Code
 **driver** `RhAhb5MstDriver`
 **tparam** `REQ=RhAhb5ReqTrans,RSP=RhAhb5RspTrans`
-**base** `RHDriverBase#(REQ,RSP)`
+**base** `RhDriverBase#(REQ,RSP)`
 Currently we don't need to create a base driver for ahb5 master and slave, just derived from the base vip driver called `RHDriverBase`.
 
 ## get configure table
@@ -50,7 +50,7 @@ forever begin
 	wait(addressQue.size());
 	beat = addressQue.pop_front();
 	config.sendAddressPhase(beat,outstandingData);
-	dataQue.push(beat);
+	dataQue.push_back(beat);
 	outstandingData++;
 end
 ```
@@ -107,7 +107,7 @@ When detect an error, the master driver should process this kind of situation, t
 config.sendDataPhase(data.data,xxx,error);
 if (error) begin
 	stopNextDataBeats();
-	driveIdleBeat();
+	driveIdleBeat(1,outstandingData);
 end else continueNextDataBeats();
 ```
 So the driver will define a task to process those kind of errors after sending each data beat.
@@ -117,7 +117,7 @@ So the driver will define a task to process those kind of errors after sending e
 ```systemverilog
 dataQue.delete();
 addressQue.delete();
-config.driveIdleBeat(1);
+config.driveIdleBeat(1,outstandingData);
 ```
 reference:
 - [[vip-rhAhb5MstConfig.svh#driveIdleBeat]]; #TODO 

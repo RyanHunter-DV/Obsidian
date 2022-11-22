@@ -2,19 +2,19 @@
 
 # Source Code
 **monitor** `RhAhb5MstMonitor`
-**base** `RHMonitorBase`
+**base** `RhMonitorBase`
 **field**
 ```systemverilog
 RhAhb5MstConfig config;
 ```
 
 ## reset process
-**vtask** `waitResetStateChanged(output RHResetState_enum s)`
+**vtask** `waitResetStateChanged(output RhResetState_enum s)`
 **proc**
 ```systemverilog
 logic sig;
 config.getResetChanged(sig);
-s = RHResetState_enum'(sig);
+s = RhResetState_enum'(sig);
 ```
 reference:
 - [[vip-rhAhb5MstConfig.svh#getResetChanged]]
@@ -70,38 +70,30 @@ A task to wait the htrans not idle and hready is high, synchronizely with hclk
 ```systemverilog
 bit done = 1'b0;
 do begin
-	if (config.getHTRANS() and config.getHREADY()) done = 1'b1;
+	if (config.getSignal("HTRANS") && config.getSignal("HREADY")) done = 1'b1;
 	else config.waitCycle();
 end while (!done);
 ```
 reference:
-- [[vip-rhAhb5MstConfig.svh#waitCycle]], #TODO 
-- [[vip-rhAhb5MstConfig.svh#getHTRANS]], #TODO 
-- [[vip-rhAhb5MstConfig.svh#getHREADY]] #TODO 
+- [[vip-rhAhb5MstConfig.svh#waitCycle]]
+- [[vip-rhAhb5MstConfig.svh#getSignal]]
 ### local func collectAddressPhaseInfo
 A function to get signal value from interface and recorded into req
 **lfunc** `void __collectAddressPhaseInfo(ref RhAhb5ReqTrans r)`
 **proc**
 ```systemverilog
 r.trans = new[1]; // only 1 trans each for monitor
-r.trans = config.getHTRANS();
-r.burst = config.getHBURST();
-r.addr  = config.getHADDR();
-r.size  = config.getHSIZE();
-r.prot  = config.getHPROT();
-r.master= config.getHMASTER();
-r.lock  = config.getHLOCK();
-r.write = config.getHWRITE();
+r.trans[0] = config.getSignal("HTRANS");
+r.burst = config.getSignal("HBURST");
+r.addr  = config.getSignal("HADDR");
+r.size  = config.getSignal("HSIZE");
+r.prot  = config.getSignal("HPROT");
+r.master= config.getSignal("HMASTER");
+r.lock  = config.getSignal("HLOCK");
+r.write = config.getSignal("HWRITE");
 ```
 reference:
-- [[vip-rhAhb5MstConfig.svh#getHTRANS]]
-- [[vip-rhAhb5MstConfig.svh#getHBURST]]
-- [[vip-rhAhb5MstConfig.svh#getHADDR]]
-- [[vip-rhAhb5MstConfig.svh#getHSIZE]]
-- [[vip-rhAhb5MstConfig.svh#getHPROT]]
-- [[vip-rhAhb5MstConfig.svh#getHMASTER]]
-- [[vip-rhAhb5MstConfig.svh#getHLOCK]]
-- [[vip-rhAhb5MstConfig.svh#getHWRITE]]
+- [[vip-rhAhb5MstConfig.svh#getSignal]]
 ### local func collectWriteData
 A function to wait one cycle and get current HWDATA from the interface
 **lfunc** `void __collectWriteData(ref RhAhb5ReqTrans r)`
@@ -109,10 +101,10 @@ A function to wait one cycle and get current HWDATA from the interface
 ```systemverilog
 config.waitCycle();
 r.wdata = new[1];
-r.wdata[0] = config.getHWDATA();
+r.wdata[0] = config.getSignal("HWDATA");
 ```
 reference:
-- [[vip-rhAhb5MstConfig.svh#getHWDATA]]
+- [[vip-rhAhb5MstConfig.svh#getSignal]]
 ## support monitoring responses
 #TODO 
 monitor the response transaction, sending response for each htrans, and sends along with the request information. 
@@ -131,16 +123,15 @@ forever begin
 	RhAhb5RspTrans rsp=new("rsp");
 	wait(reqWriteInfo.size()); // need wait last cycle has request.
 	__waitReadyHigh();
-	rsp.resp = config.getHRESP();
+	rsp.resp = config.getSignal("HRESP");
 	rsp.iswrite = reqWriteInfo.pop_front();
-	if rsp.iswrite==0 && rsp.resp==0 rsp.rdata = config.getHRDATA();
+	if (rsp.iswrite==0 && rsp.resp==0) rsp.rdata = config.getSignal("HRDATA");
 	rspP.write(rsp);
 end
 ```
 
 reference:
-- [[vip-rhAhb5MstConfig.svh#getHRESP]], #TODO 
-- [[vip-rhAhb5MstConfig.svh#getHRDATA]], #TODO 
+- [[vip-rhAhb5MstConfig.svh#getSignal]]
 
 ### local task waitReadyHigh
 A task to wait HREADY high synchronizely by HCLK
@@ -149,9 +140,9 @@ A task to wait HREADY high synchronizely by HCLK
 ```systemverilog
 bit done=1'b0;
 while (!done) begin
-	done = (config.getHREADY()===1'b1)? 1'b1 : 1'b0;
+	done = (config.getSignal("HREADY")[0]==1'b1)? 1'b1 : 1'b0;
 end
 ```
 reference:
-- [[vip-rhAhb5MstConfig.svh#getHREADY]], #TODO 
+- [[vip-rhAhb5MstConfig.svh#getSignal]]
 - 

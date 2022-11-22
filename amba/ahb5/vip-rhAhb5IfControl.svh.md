@@ -133,3 +133,28 @@ case (hsize)
 endcase
 ```
 
+## sync
+The sync task is to repeat specified cycles of the `HCLK`
+**vtask** `sync(int cycle)`
+**proc**
+```systemverilog
+repeat (cycle) @(posedge vif.HCLK);
+```
+## getSignal
+**vfunc** `uvm_bitstream_t getSignal(string signame)`
+**proc**
+```systemverilog
+case (signame)
+	"HTRANS": return vif.HTRANS;
+	"HADDR": return vif.HADDR;
+	"HSIZE": return vif.HSIZE;
+	"HBURST": return vif.HBURST;
+	"HLOCK": return vif.HLOCK;
+	"HREADY": return vif.HREADY;
+	"HWRITE": return vif.HWRITE;
+	"HPROT" : return vif.HPROT;
+	"HWDATA": return vif.HWDATA;
+	"HRESP" : return vif.HRESP;
+	"HRDATA": return vif.HRDATA;
+endcase
+```

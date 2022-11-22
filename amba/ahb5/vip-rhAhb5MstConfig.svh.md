@@ -7,6 +7,11 @@ The interface controller which is an object class that sent from TB level. In th
 ```systemverilog
 RhAhb5IfControlBase ifCtrl;
 ```
+The interface controller is got by user set `interfacePath`
+**field**
+```systemverilog
+string interfacePath;
+```
 
 ## driving interface
 ### sendAddressPhase
@@ -32,15 +37,33 @@ reference:
 
 ## getResetChanged
 This task will the the interface controller's `waitResetChanged`
-**task** `waitResetChanged(output logic s)`
+**task** `getResetChanged(output logic s)`
 **proc**
 ```systemverilog
 ifCtrl.getResetChanged(s);
 ```
 [[vip-rhAhb5IfControlBase.svh#getResetChanged]]
 
-## getHREADY
-A function to get current HREADY value from interface, the return value is a logic.
-## getHRESP
-Get current signal value of HRESP from interface, the return value is a logic.
-#TODO 
+
+## getSignal
+**func** `uvm_bitstream_t getSignal(string signame)`
+**proc**
+```systemverilog
+return ifCtrl.getSignal(signame);
+```
+## waitCycle
+call controller to wait cycle
+**task** `waitCycle(int c=1)`
+**proc**
+```systemverilog
+ifCtrl.sync(c);
+```
+## driveIdleBeat
+This task to drive an idle beat of a master device, with specified cycle, the idle beat will last cycles according to the argument.
+PS: arg os is short of outstandingData from driver.
+**task** `driveIdleBeat(int cycle=1,int os)`
+**proc**
+```systemverilog
+RhAhb5TransBeat beat;
+sendAddressPhase(beat,os);
+```
