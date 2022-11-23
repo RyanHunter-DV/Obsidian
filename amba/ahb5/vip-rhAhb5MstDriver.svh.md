@@ -25,8 +25,8 @@ RhAhb5MstConfig config;
 For each transaction, which contains both data and address information, but it will be sent to bus separately by pushing them into separate queues. First decalre two `RhAhb5ReqTrans` typed queue, to store data and address information from sequencer.
 **field**
 ```systemverilog
-REQ addressQue[$];
-REQ dataQue[$];
+RhAhb5TransBeat addressQue[$];
+RhAhb5TransBeat dataQue[$];
 int outstandingData;
 ```
 Since the address and data phase has dependencies, so transaction in dataQue only comes from the thread after sending the addressQue, like:

@@ -56,10 +56,10 @@ forever begin
 	__waitRequestValid();
 	__collectAddressPhaseInfo(req);
 	reqWriteInfo.push_back(req.write);
-	reqP.send(req);
+	reqP.write(req);
 	if (req.write==1) begin
 		__collectWriteData(req);
-		wreqP.send(req);
+		wreqP.write(req);
 	end
 end
 ```
@@ -94,9 +94,9 @@ r.write = config.getSignal("HWRITE");
 ```
 reference:
 - [[vip-rhAhb5MstConfig.svh#getSignal]]
-### local func collectWriteData
-A function to wait one cycle and get current HWDATA from the interface
-**lfunc** `void __collectWriteData(ref RhAhb5ReqTrans r)`
+### local task collectWriteData
+A task to wait one cycle and get current HWDATA from the interface
+**ltask** `__collectWriteData(ref RhAhb5ReqTrans r)`
 **proc**
 ```systemverilog
 config.waitCycle();

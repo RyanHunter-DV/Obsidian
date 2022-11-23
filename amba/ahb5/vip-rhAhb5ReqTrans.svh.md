@@ -14,6 +14,9 @@ bit [3:0] master;
 bit [1:0] trans[];
 bit [`RHAHB5_DW_MAX-1:0] wdata[];
 bit write;
+rand int delay;
+
+constraint delay_cst {delay inside {[0:100]};}
 ```
 macros defined in [[vip-rhAhb5Types.svh]].
 The wdata is part of the request transaction, while the resp and data are in response transaction.
