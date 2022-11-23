@@ -27,7 +27,7 @@ process proc;
 - init resetI imp
 **build**
 ```
-// not manually added resetI = new("resetI");
+resetI = new("resetI",this);
 ```
 ## run_phase
 **run**

@@ -16,6 +16,7 @@ logic HMASTLOCK;
 logic HNONSEC;
 logic HEXCL;
 logic HWRITE;
+logic HLOCK;
 ```
 
 ## slave signal
@@ -23,6 +24,6 @@ logic HWRITE;
 ```systemverilog
 logic [1:0] HRESP;
 logic [DW-1:0] HRDATA;
-logic HREADYOUT;
+logic HREADY;
 logic HEXOKAY;
 ```

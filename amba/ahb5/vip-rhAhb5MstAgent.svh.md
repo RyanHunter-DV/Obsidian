@@ -29,6 +29,8 @@ The driver, sequencer, and monitor will be setup according to the `is_active` fi
 For details, see [[#setupSubComponents]].
 **build**
 ```systemverilog
+reqP = new("reqP",this);
+rspP = new("rspP",this);
 __setupConfigureTable__();
 setupSubComponents();
 ```

@@ -11,6 +11,7 @@ RhResetState_enum currentResetState;
 **build**
 ```
 currentResetState = RhResetUnknow;
+resetP = new("resetP",this);
 ```
 ## waitResetStateChanged
 A virtual task to wait and get the changed reset state, this task will be overidden by sub-class.

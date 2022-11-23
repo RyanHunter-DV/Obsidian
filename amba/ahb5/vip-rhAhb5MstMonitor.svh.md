@@ -145,4 +145,11 @@ end
 ```
 reference:
 - [[vip-rhAhb5MstConfig.svh#getSignal]]
-- 
+
+### build phase
+**build**
+```systemverilog
+reqP = new("reqP",this);
+rspP = new("rspP",this);
+wreqP= new("wreqP",this);
+```
