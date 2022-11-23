@@ -39,14 +39,15 @@ virtual task without doing anything
 ## resetMonitor
 This is a forever task one run_phase started, this will wait the reset state changed by subclass, and then assemble a reset transaction and send through reset port.
 **task** `resetMonitor()`
+**proc**
 ```systemverilog
 RhResetTransBase _t = new("initReset");
 _t.state = currentResetState;
-resetP.send(_t);
+resetP.write(_t);
 forever begin
 	RhResetTransBase updatedTrans = new("updatedReset");
 	waitResetStateChanged(currentResetState);
 	updatedTrans.state = currentResetState;
-	resetP.send(updatedTrans);
+	resetP.write(updatedTrans);
 end
 ```
