@@ -1,67 +1,68 @@
-The metaAssembly is the flow to assemble meta design features into a verilog module. Currently supports verilog language only.
-# Feature list
-- [[#logical block assembly]], #TBD 
-- [[#module instances]], #TBD 
-- [[#signal auto declaration]], #TBD 
-- assemble from `*.md` file, to generate `*.v` file;
-- create a delibs for all features/modules stored;
-- [[#specify target module]], #TBD 
+# feature list
+- [[#logical feature block]]
+- [[#nested feature declaration]]
+- [[#variable feature declaration]]
+- [[#module instances]]
 - [[#signal automatically declared]]
-- 
+- [[#module declaration]], #TBD 
 
-## logical block assembly
-A specific bunch of logical operation can be defined as a design feature, and can be invoked while declaring a design.
-The definition of a design feature can be like:
-==strategy 1==
-**feature** `featureName00`
-```verilog
-always @(posedge <clk> or negedge <rstn>) begin
-	if (!<rstn>) begin
-		<signal0> <= 8'b000;
-	end else begin
-		case(<signal1>)
-			3'b000: <signal0> <= 8 'h0000_0001;
-		endcase
-	end
-end
-```
-Invoke of a defined design feature can be like:
-**feature** `featureName00(clk_i,rstn,decoded,encode)`
-
-~~==strategy 2==
+## logical feature block
+A bunch of logical operation can be declared as feature block. By declaring a bunch of code within a specific feature declaration file. This file will be taken in by a tool for generating RTL code.
+The file is like:
 ```ruby
-defeature 'featureName00' do
-	raw <<-EOF
-always @(posedge <clk> or negedge <rstn>) begin
-	if (!<rstn>) begin
-		<signal0> <= 8'b000;
-	end else begin
-		case(<signal1>)
-			3'b000: <signal0> <= 8 'h0000_0001;
-		endcase
+feature :featureName00 do |*s|
+	codes << "#{s[0]} = #{s[1]} & #{s[2]};";
+end
+```
+
+## nested feature declaratin
+A nested feature usage is supported, like:
+```ruby
+feature :featureName00 do |*s|
+	codes << "#{s[0]} = #{s[1]} & #{s[2]};";
+end
+feature :featureName01 do |*s|
+	a = 'tmp'
+	featureName00 a,s[1],s[2]
+	featureName00 s[0],s[3],a
+end
+featureName01 'a','b','c','d'
+```
+## variable feature declaration
+variable feature means some of similar features can be declared through a specific variable, like:
+```ruby
+10.times do |index|
+	next if index < 2;
+	feature "bitAnd#{index}".to_sym do |*s|
+		l = "#{s[0]} = #{s[1]} & #{s[2]}"
+		iindex=2
+		while (iindex < index) do
+			l+=" & #{s[iindex+1]}"
+			iindex += 1
+		end
+		codes << l
 	end
 end
-EOF
-end
-## feature called like:
-featureName00(clk_i,rstn,decoded,encode)
+bitAnd2 a,b,c
+bitAnd3 a,b,c,d
 ```
-end strike through~~
-Finally, we decide to use strategy1. The pre-defined features are stored in all md files.
 ## module instances
 The module instances feature can automatically instantiate a module with automatically signal connection, except special connections specified by user.
-**inst** `modulename instname[2]`
-```
-.port_i(special_connect),
-.port2_i(partial_connect[4])
-```
-or:
-**inst** `modulename instname`
-```
+
+```ruby
+modinst 'modulename','instname' do
+	connect '.port_i(rgn_ihit[0])'
+end
 ```
 or:
-**inst** `modulename#(params) instname`
+```ruby
+modinst 'modulename','instname'
 ```
+or:
+```ruby
+modinst 'modulename#(param)','instname' do
+	connect '.port_i(rgn_ihit[0])'
+end
 ```
 ## signal automatically declared
 special flags of a signal can be recognized by tool to declare it as a specific type:
@@ -71,18 +72,36 @@ special flags of a signal can be recognized by tool to declare it as a specific 
 - `*_io` for inout
 - `*_r` for reg
 other signals that connected to a module instance but want to be consumed in current module, can be explicitly changed its connection while instantiation, like:
-**inst** `module inst`
-```
-.port_i(port_w)
+
+```ruby
+modinst 'modulename','instname' do
+	connect '.port_i(rgn_ihit_w)'
+end
 ```
 Then tool will automatically read the module and declare a wired port_w the same width as module declared.
 Another way is to manually map the signals, for example:
 if the signal0_w used in featureBlock would also like to connect to the inst's port0_i signal. By declaring as below can map the instantiated signal with current module used signal:
-**connect** `inst[0].port_i signal0_w`
-**feature** `featureBlock(signal0_w)`
-**inst** `module inst[3]`
-```
-// suppose module has a port: port_i
+#TBD , this feature remained as an optional feature
+```ruby
+connect 'instname.port_i','rgn_ihit_w'
+modinst 'modulename','instname'
 ```
 
+## module declaration
+A module declaration file is to call many feature blocks and other modules as instances, connect those signals correctly and declare its own input/output.
+By assembling the module declaration file, feature files and other module files can finally generate a standard RTL module file.
+module file example:
+```ruby
+module 'modulename' do
+
+	equalCompareWithMask('addr_match_w','ahb_haddr_i','base_addr_i','region_mask_i')
+	bitAnd3('region_hit_w','sub_enable_w','region_comp_en_i','addr_match_w')
+	inv('sub_enable_w','region_perm_srd_i[sr_sel_w]')
+
+	modinst 'modulename','instname' do
+		connect '.port_i(rgn_ihit[0])'
+	end
+	
+end
+```
 #TBD 
