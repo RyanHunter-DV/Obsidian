@@ -48,7 +48,7 @@ join
 ```systemverilog
 forever begin
 	wait(resetState == RhResetActive);
-	if (proc.status != process::FINISHED) proc.kill();
+	if (proc!=null && proc.status != process::FINISHED) proc.kill();
 	wait(resetState == RhResetInactive);
 end
 ```

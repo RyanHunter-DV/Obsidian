@@ -5,8 +5,8 @@
 ```
 typedef enum logic {
 	RhResetUnknow   = 'bx,
-	RhResetActive   = 'b1,
-	RhResetInactive = 'b0
+	RhResetActive   = 'b0,
+	RhResetInactive = 'b1
 } RhResetState_enum;
 ```
 

@@ -79,9 +79,10 @@ end while (e==1'b0);
 
 ## getResetChanged
 **vtask** `getResetChanged(output logic s)`
+**proc**
 ```systemverilog
-@(vif.HRESETn);
-s = vif.HRESETn;
+@(vif.HRESETN);
+s = vif.HRESETN;
 ```
 
 ## calculateCurrentAddress
