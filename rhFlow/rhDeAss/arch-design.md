@@ -1,3 +1,6 @@
+*relative links*
+- [[rhFlow/rhDeAss/arch-component]]
+- 
 # Features
 - [[#declare a design]]
 - [[#configure manager]]

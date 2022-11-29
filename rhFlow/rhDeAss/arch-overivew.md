@@ -33,7 +33,7 @@ A component is kind of a sub module or hierarchy of the project, it's used to cr
 component 'IPComponent' do
 	type :vmod # or type :block, or type :ip
 	view :rtl
-	interface RhAhb5If.slave, :as => 'ppb'
+	interface 'RhAhb5If', :type => :slave, :as => 'ppb'
 	adhoc 'ppb_sel_oh_o',:out,8
 
 	feature 'bitAnd2', ppb.HREADY,ppb.HTRANS[0],ppb_sel_oh_o[2]
@@ -61,10 +61,12 @@ end
 for more examples, refer to:
 [[libs/de/rhDeAss/arch-overview#feature files]]
 ## interface
-use to declare a bunch of ports, #TBD 
+use to declare a bunch of ports.
 
 *relative links*
 - [[#port]]
+- [[rhFlow/rhDeAss/arch-interface]]
+- 
 ## port
 `port` used to declare signals with in/out/inout attributes, example:
 ```ruby
@@ -87,3 +89,7 @@ The port has following features:
 - define `[]` method which is a partial selection API.
 - connect API, 
 - #TBD 
+
+# Architecture
+- [[rhFlow/rhDeAss/src-rhda]]
+- 

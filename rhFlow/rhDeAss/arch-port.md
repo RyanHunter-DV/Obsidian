@@ -1,4 +1,8 @@
-This page describes all features of ports, which can support many features as showed below.
+This page describes all features of ports, which can support many features as showed below. The port is mainly a concept of port object, users can usually declare as `adhoc` or `interface` to use the port.
+
+*relative links*
+[[rhFlow/rhDeAss/arch-interface]]
+
 # Features
 - [[#declare a port]]
 - [[#partial selection]]
@@ -19,9 +23,10 @@ The suffix flag after the last underscore indicates the type of this port, which
 A port can be connected by calling it's `connect` API. like:
 ```ruby
 adhoc 'ppb_sel_oh_o',32
-interface RhAhb5if.slave, :as => 'ppb0'
+interface 'RhAhb5if', :as => 'ppb0'
 ppb_sel_oh_o[1].connect ppb0.HWRITE
 ppb_sel_oh_o[3].connect ppb1.HWDATA[1]
+## HWDATA is a port
 ```
-#MARKER
+- [[rhFlow/rhDeAss/lib/src-port.rb]]
 
