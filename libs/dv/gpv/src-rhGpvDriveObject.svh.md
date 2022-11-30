@@ -35,4 +35,3 @@ vectors[__currentCycle][pos.e:pos.s] = val[size-1:0];
 bitsens[__currentCycle][pos.e:pos.s] = {size{1'b1}};
 ```
 
-
