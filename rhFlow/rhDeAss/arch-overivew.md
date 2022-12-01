@@ -27,7 +27,7 @@ A component is kind of a sub module or hierarchy of the project, it's used to cr
 - `type`, used to specify the type of the component is a logical block(:block) or a verilog module (:vmod);
 - `view`, view like :rtl or :shell, used to generate interface only or with internal component/features.
 - #TBD 
-
+details: [[rhFlow/rhDeAss/arch-component]]
 *example*:
 ```ruby
 component 'IPComponent' do
@@ -36,11 +36,11 @@ component 'IPComponent' do
 	interface 'RhAhb5If', :type => :slave, :as => 'ppb'
 	adhoc 'ppb_sel_oh_o',:out,8
 
-	feature 'bitAnd2', ppb.HREADY,ppb.HTRANS[0],ppb_sel_oh_o[2]
+	f__bitAnd2, ppb.HREADY,ppb.HTRANS[0],ppb_sel_oh_o[2]
 
 	...
 
-	component 'SubIpComponent', :as => 'sip0'
+	c__SubIpComponent :as => 'sip0'
 
 	#TBD for connect
 	connect do
@@ -91,5 +91,7 @@ The port has following features:
 - #TBD 
 
 # Architecture
-- [[rhFlow/rhDeAss/src-rhda]]
+*relative links for source code*
+- [[rhFlow/rhDeAss/src-rhda]], the main tool shell
+- [[rhFlow/rhDeAss/v1/arch-overview]], architecture entry of v1
 - 
