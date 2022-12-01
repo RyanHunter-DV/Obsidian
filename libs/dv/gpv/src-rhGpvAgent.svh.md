@@ -8,11 +8,13 @@
 **tparam** `REQ=uvm_sequence_item,RSP=REQ`
 
 ## fields
+**field**
 ```systemverilog
 RhGpvDriver  drv;
 RhGpvMonitor mon;
 RhGpvConfig  config;
 RhGpvProtocolBase protocol;
+RhGpvSeqr seqr;
 ```
 *relative links*
 - [[libs/dv/gpv/src-rhGpvConfig.svh]]

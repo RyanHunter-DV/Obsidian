@@ -16,7 +16,9 @@ RhGpvSigPos_t signalMap[string];
 **lfunc** `void __register__(string name,int s,int e)`
 **proc**
 ```systemverilog
-RhgpvSigPos_t pos= {s,e};
+RhGpvSigPos_t pos;
+pos.s = s;
+pos.e = e;
 signalMap[name] = pos;
 ```
 
@@ -41,10 +43,14 @@ A virtual function override in sub class and called at super class for setting t
 
 ## translateToReq
 This API to translate the getting vectors in `DriveObject` to the request transaction provided by user.
-**vfunc** `uvm_sequence_item translateToReq(RhGpvDriveObject dobj)`
+**vfunc** `uvm_sequence_item translateToReq(RhGpvInterfaceControl ifc)`
 ```
 ```
-
+## translateReqToDriveObject
+**vfunc** `void translateReqToDriveObject(uvm_sequence_item req,ref RhGpvDriveObject dobj)`
+**proc**
+```
+```
 ## waitReqStart
 User API to specify the start conditions of a request monitor
 **vtask** `waitReqStart(RhGpvDriveObject dobj,RhGpvInterfaceControl ifc)`

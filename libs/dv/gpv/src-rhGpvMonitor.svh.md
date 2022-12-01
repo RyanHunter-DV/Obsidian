@@ -13,6 +13,7 @@ A monitor to collect requests/response from the given protocol, and send through
 **field**
 ```systemverilog
 RhGpvProtocolBase protocol;
+RhGpvConfig config;
 ```
 ## setup by build
 **build**
@@ -42,8 +43,8 @@ A forever thread to monitor variety of requests defined by protocol.
 forever begin
 	RhGpvDriveObject dobj=new("dobj");
 	REQ req;
-	protocol.waitReqStart(dobj,config.ifc);
-	req = protocol.translateToReq(dobj,config.ifc);
+	protocol.waitReqStart(dobj,config.ifCtrl);
+	req = protocol.translateToReq(config.ifCtrl);
 	reqP.write(req);
 end
 ```
@@ -57,5 +58,5 @@ end
 **task** `rspMonitorThread()`
 **proc**
 ```systemverilog
-#TBD 
+// #TBD 
 ```
