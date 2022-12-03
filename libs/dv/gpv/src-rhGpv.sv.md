@@ -2,13 +2,13 @@
 **package** `RhGpv`
 
 ## prerequisit for base lib
-**include**
+**head**
 ```
 rhlib.sv // TODO
 ```
 **import**
 ```
-RhLib::*
+Rhlib::*
 ```
 
 ## files included
@@ -23,6 +23,7 @@ rhGpvDriveObject.svh
 rhGpvProtocolBase.svh
 
 rhGpvDriver.svh
+rhGpvSeqr.svh
 rhGpvMonitor.svh
 rhGpvAgent.svh
 
@@ -36,6 +37,7 @@ rhGpvAgent.svh
 - [[libs/dv/gpv/src-rhGpvDriveObject.svh]]
 - [[libs/dv/gpv/src-rhGpvProtocolBase.svh]]
 - [[libs/dv/gpv/src-rhGpvDriver.svh]]
+- [[libs/dv/gpv/src-rhGpvSeqr.svh]]
 - [[libs/dv/gpv/src-rhGpvMonitor.svh]]
 - [[libs/dv/gpv/src-rhGpvAgent.svh]], #TBD 
 - 

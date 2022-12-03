@@ -7,15 +7,12 @@
 **tparam** `REQ=uvm_sequence_item,RSP=REQ`
 
 ## fields
+**field**
 ```systemverilog
 RhGpvProtocolBase protocol;
 RhGpvConfig config;
 ```
-## setup of this driver
-**build**
-```systemverilog
-protocol = RhGpvProtocolBase::type_id::create("protocol");
-```
+
 ## mainProcess
 **vtask** `mainProcess()`
 **proc**
@@ -29,6 +26,7 @@ seq_item_port.item_done(); // no response available for now.
 ```
 *relative links*
 - [[libs/dv/gpv/src-rhGpvDriveObject.svh]]
+- [[libs/dv/gpv/src-rhGpvProtocolBase.svh#translateReqToDriveObject]]
 - [[#driveTheDriveObject]] 
 
 ## driveTheDriveobject

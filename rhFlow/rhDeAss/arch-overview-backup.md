@@ -1,10 +1,14 @@
+# Contents
+- [[#feature list]]
+- [[#architecture]]
+- 
 # feature list
 - [[#logical feature block]]
 - [[#nested feature declaration]]
 - [[#variable feature declaration]]
 - [[#module instances]]
 - [[#signal automatically declared]]
-- [[#module declaration]], #TBD 
+- [[#module declaration]]
 
 ## logical feature block
 A bunch of logical operation can be declared as feature block. By declaring a bunch of code within a specific feature declaration file. This file will be taken in by a tool for generating RTL code.
@@ -94,7 +98,7 @@ module file example:
 ```ruby
 module 'modulename' do
 
-	equalCompareWithMask('addr_match_w','ahb_haddr_i','base_addr_i','region_mask_i')
+equalCompareWithMask('addr_match_w','ahb_haddr_i','base_addr_i','region_mask_i')
 	bitAnd3('region_hit_w','sub_enable_w','region_comp_en_i','addr_match_w')
 	inv('sub_enable_w','region_perm_srd_i[sr_sel_w]')
 
@@ -104,4 +108,7 @@ module 'modulename' do
 	
 end
 ```
+
+# architecture
+before establishing the architecture, create an example first.
 #TBD 
