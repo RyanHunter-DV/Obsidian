@@ -21,6 +21,8 @@ end
 ```
 *relative links*
 [[rhFlow/rhDeAss/arch-design]], #TBD 
+[[rhFlow/rhDeAss/arch-component]]
+
 
 ## component
 A component is kind of a sub module or hierarchy of the project, it's used to create hierarchical designs. A component has the properties like:
@@ -60,6 +62,8 @@ end
 ```
 for more examples, refer to:
 [[libs/de/rhDeAss/arch-overview#feature files]]
+for details, refer to:
+[[rhFlow/rhDeAss/arch-feature]]
 ## interface
 use to declare a bunch of ports.
 

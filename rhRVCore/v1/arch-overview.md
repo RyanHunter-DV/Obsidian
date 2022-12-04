@@ -24,8 +24,13 @@ the overall architecture diagram should be located:
 
 # SUB-IP level overview
 ## rhRVCoreIFetch
-The instruction fetch sub-ip, send fetch request to ICache and gets the response instruction.
+The `rhRVCoreIFetch`, is the instruction fetch sub-ip, send fetch request to ICache and gets the response instruction. Then send the riscv instruction to `rhRVCoreIDecode` sip.
 - one instruction can be fetched every clock cycle
+- receive different requests from other module and to change the next fetch address
+	- instruction jump request from the executor module;
+	- interrupt jump request to fetch the interrupt entry address, this request sent by interrupt handler module;
+	- 
+details: [[rhRVCore/v1/rhRVCoreIFetch/src-interface.rhda]]
 
 
 
