@@ -5,11 +5,33 @@ This file will be gnerated as `interface.rhda` which will be the interface decla
 
 
 
-
-## IFetcherReq
+## ChangePCReq
 **interface**
 ```ruby
-interface 'IFetcherReq' do |**opts|
+interface 'ChangePCReq' do |**opts|
+	pcwidth = 32
+	pcwidth = opts[:PCW] if opts.has_key?(:PCW)
+
+	oports = {
+		'vld' => 1,
+		'PC'  => pcwidth
+	}
+	modport :transmit do
+		oports.each_pair do |p,w|
+			port p+'_o',w
+		end
+	end
+	modport :receive do
+		oports.each_pair do |p,w|
+			port p+'_i',w
+		end
+	end
+end
+```
+## IFetchReq
+**interface**
+```ruby
+interface 'IFetchReq' do |**opts|
 	pcwidth = 32
 	pcwidth = opts[:PCW] if opts.has_key?(:PCW)
 
