@@ -48,3 +48,5 @@ component 'TestComponent' do
 end
 ```
 
+# latest sketch
+![[Pasted image 20221204211219.png]]

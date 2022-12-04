@@ -17,18 +17,37 @@ feature of bit and operation, the operands from 2 to 10
 end
 ```
 
-# combine selection mux
+# combineMux
 It's a mux that select different value according to the condition.
 **head**
 ```ruby
-feature 'combineMux', *opts do
+feature 'combineMux2', *opts do
 	c = opts[0] ## condition in string
 	o = opts[1] ## the net to be selected
 	t = opts[2] ## value when condition is true
 	f = opts[3] ## value when condition is false
-	verilog "o = #{c}?#{t} : #{f}"
+	verilog "#{o} = #{c}?#{t} : #{f}"
 end
 ```
+**head**
+```ruby
+feature 'combineMux3', *opts do
+	o = opts[0] ## the net to be selected
+	c1= opts[1] ## condition in string
+	s1= opts[2] ## value when condition is true
+	c2= opts[3] ## condition in string
+	s2= opts[4] ## value when condition is false
+	s3= opts[5]
+	verilog "#{o} = #{c1}?#{s1} : (#{c2}?#{s2}:#{s3})"
+end
+```
+
+# bitor
+The `bitor` feature support bit operation of or, which supports:
+- `bitor1`, single multiple line port, `or` its all bits, if any of the bit is 1, then the output signal will be 1
+- `bitor2`, two same width operands are ored bitwise, returns the same width signal with each bit is ored from the counterpart position of the two operands
+- `bitor3`, ... from 2+, the operations are same as `bitor2`
+#TBD, code here
 
 # basicDff
 The basic dff with en flag, when enabled, the q equals to d, else q keeps its original value.
