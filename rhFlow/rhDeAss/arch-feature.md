@@ -35,3 +35,34 @@ while calling the defined feature, which will experience:
 - feature can be invoked by component only, nomatter `:block` or `:vmod` typed component
 - All these concepts available for rhDeAss only
 - by calling `verilog` at the end of the `f__<featureName>` method, the raw contents can be publish to its container.
+
+## configurating a feature
+- input/output is different and will be specified by the caller
+- other configures, such extra string contents to assemble this feature
+*example of configure:*
+```ruby
+feature 'combineMux3', *opts do
+	"#{opts[3]} = <=%config%>?#{opts[0]} : <=%config%>?#{opts[1]}:#{opts[2]}"
+end
+# using of above feature:
+f_combineMux3 s0,s1,s2,o do
+	config "grantedPC_w==3'b001"
+	config "grantedPC_w==3'b010"
+end
+```
+# description
+A feature is kind of a logical block that will realize a certain functionalities. It's inputs and outputs and description should be extremely explicit to users, so that can be easily refered by them.
+So the feature can be like:
+```ruby
+feature 'namedFeature' do
+	input a,b,c
+	output d,e
+	descp 'this feature achives xxxx'
+
+	## real action code block, which is not necessary for users
+	xxxx
+
+end
+## calling a feature can be:
+blockA.porta.to namedFeature.a ## auto creating a feature instance
+```

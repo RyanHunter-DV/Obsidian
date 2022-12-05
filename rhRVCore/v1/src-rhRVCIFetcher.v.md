@@ -29,15 +29,16 @@ requirements for setting up this component:
 ```ruby
 component 'RhRVCIFetcher' do
 	type :vmod
-	ChangePCReq.receive :as => 'execPCR'
-	ChangePCReq.receive :as => 'intrPCR'
+	execPCR = ChangePCReq.receive 'execPCR'
+	intrPCR = ChangePCReq.receive 'intrPCR'
 
 	adhoc 'internalPCR_vld_w',1
 	adhoc 'internalPCR_PC_w',32
 	adhoc 'grantedPC_w',32
 	adhoc 'grantedVld_w',1
-	
-	c__RhRVCIFetcher_arbitor(
+
+
+	c_RhRVCIFetcher_arbitor(
 		intrPCR.vld_i,
 		execPCR.vld_i,
 		internalPCR_vld_w,
@@ -50,11 +51,36 @@ component 'RhRVCIFetcher' do
 end
 ```
 
+
+
 ## RhRVCIFetcher_arbitor
 The arbitration block, getting change PC requests from executor, interrupter and internal, has following functionalities:
 - the interrupter has the highest priority to change next PC, once this req is available, then other requests will be ignored then.
 - the executor is the second priority.
 - the internal request is the lowest priority.
+**head**
+```ruby
+component 'RhRVCIFetcher_arbitor' do |*opts|
+	type :block
+
+	adhoc 'arbitorVld_w',3
+	adhoc 'grantedVldOnehot_w',3
+	a0 = 'arbitorVld_w'
+	a1 = 'grantedVldOnehot_w'
+	f_concat 3,opts[0],opts[1],opts[2],a0
+	f_hightolowPArbitor 3,a0,a1
+
+	f_combineMux3 opts[3],opts[4],opts[5],opts[6] do
+		config "grantedPC_w==3'b001"
+		config "grantedPC_w==3'b010"
+	end
+
+	f_bitor1 opts[7],a1
+	
+end
+```
+
+
 **head**
 ```ruby
 component 'RhRVCIFetcher_arbitor' do |*args|
@@ -81,7 +107,26 @@ end
 - [[libs/de/features/src-logicFeatures#concat]]
 - [[libs/de/features/src-logicFeatures#combineMux]]
 
+## strategy 2 for feature example
+```ruby
+component 'RhRVCIFetcher_arbitor' do
+	input vld0,vld1,vld2
+	input pc0,pc1,pc2
+	output gvld,gpc
 
+	f__concat vld0,vld1,vld2,tmp
+	f__hightolowPArbitor tmp,tmp2
+	tmp2.to f__bitor1 xxx
+end
+component 'RhRVCIFetcher' do
+
+	execPCR = ChangePCReq.receive('execPCR')
+	arbitor = c__RhRVCIFetcher_arbitor.alias
+
+	execPCR.vld_i.to arbitor.inputa
+
+end
+```
 
 
 

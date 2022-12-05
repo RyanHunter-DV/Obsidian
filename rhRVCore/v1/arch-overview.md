@@ -30,7 +30,7 @@ The `rhRVCoreIFetch`, is the instruction fetch sub-ip, send fetch request to ICa
 	- instruction jump request from the executor module;
 	- interrupt jump request to fetch the interrupt entry address, this request sent by interrupt handler module;
 	- 
-details: [[rhRVCore/v1/rhRVCoreIFetch/src-interface.rhda]]
+
 
 
 

@@ -3,6 +3,8 @@
 - [[#component]]
 - [[#feature]]
 - [[#interface]]
+- [[#execution flow]]
+- 
 ## design
 A design is the top concept of a project. The assembly flow will run start from the specified design level.
 A design will contain many of the components it required, connections and configurations for instantiating those components, interfaces etc.
@@ -99,3 +101,7 @@ The port has following features:
 - [[rhFlow/rhDeAss/src-rhda]], the main tool shell
 - [[rhFlow/rhDeAss/v1/arch-overview]], architecture entry of v1
 - 
+
+# execution flow
+1. collect all features/components/configures/interfaces etc to generate logical operations in verilog
+2. declaring wire/port/reg according to current logical operations and suffix of the signals as mentioned above
