@@ -22,6 +22,6 @@ constraint transnum_cst {
 	trans.size() inside {[1:4]};
 }
 ```
-macros defined in [[vips/ahb5/src-rhAhb5Types.svh]].
+macros defined in [[vips/ahb5/src/src-rhAhb5Types.svh]].
 The wdata is part of the request transaction, while the resp and data are in response transaction.
-The base transaction defined in [[vips/ahb5/src-rhAhb5TransBase.svh]].
+The base transaction defined in [[vips/ahb5/src/src-rhAhb5TransBase.svh]].

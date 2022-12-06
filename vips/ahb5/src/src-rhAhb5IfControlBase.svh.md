@@ -1,4 +1,4 @@
-This is a base class defined for place holder of an interface controller definition, it's parameterized subclass is defined: [[vips/ahb5/src-rhAhb5IfControl.svh]].
+This is a base class defined for place holder of an interface controller definition, it's parameterized subclass is defined: [[vips/ahb5/src/src-rhAhb5IfControl.svh]].
 # Source Code
 **object** `RhAhb5IfControlBase`
 

@@ -11,7 +11,7 @@ The `RHAhb5Vip` locates in ahb5 of vips project, it has file structures:
 -   `./common/`, dir for common files that will be used both by master or slave
 -   `./mst/`, dir for master device only files.
 -   `./slv/`, dir for slave device only files
--   `./rhAhb5Vip.sv`, the package file of the whole axi4 vip, for details, see [[vips/ahb5/src-rhAhb5Vip.sv]]
+-   `./rhAhb5Vip.sv`, the package file of the whole axi4 vip, for details, see [[vips/ahb5/src/src-rhAhb5Vip.sv]]
 -   `./test/`, dir for self tests, mostly tested by self connection between master and slave.
 
 # Top Device
@@ -26,11 +26,11 @@ xxxx
 #TBD 
 Using examples are located in [[#Using Masters]].
 A master devices contains following components/objects:
-- [[vips/ahb5/src-rhAhb5MstAgent.svh]], this is the basic master agent where this master device actually defined.
-- [[vips/ahb5/src-rhAhb5MstDriver.svh]], the driver component specifically for master.
-- [[vips/ahb5/src-rhAhb5MstSeqr.svh]], the master sequencer.
-- [[vips/ahb5/src-rhAhb5MstMonitor.svh]], the monitor component.
-- [[vips/ahb5/src-rhAhb5MstConfig.svh]], the master configure table.
+- [[vips/ahb5/src/src-rhAhb5MstAgent.svh]], this is the basic master agent where this master device actually defined.
+- [[vips/ahb5/src/src-rhAhb5MstDriver.svh]], the driver component specifically for master.
+- [[vips/ahb5/src/src-rhAhb5MstSeqr.svh]], the master sequencer.
+- [[vips/ahb5/src/src-rhAhb5MstMonitor.svh]], the monitor component.
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh]], the master configure table.
 ## configure a master device
 #TBD 
 
@@ -48,7 +48,7 @@ uvm_config_set(controlBase)::set(xxx);
 // get in vip config
 uvm_config_get(controlBase)::get(xxx);
 ```
-~~The master device provides an API called `createConfig`, which will create a bases master configure table for users to add configurations in build phase, and then in VIP's build phase, the VIP will get that virtual interface through  the given configurations, and create a parameterized master configure table through interface controller (see [[vips/ahb5/src-rhAhb5If.sv]]), and the user configures will be cloned to the newly created configure table, and delete the old ones. Detailed information see [[vips/ahb5/src-rhAhb5MstAgent.svh#build_phase]].~~
+~~The master device provides an API called `createConfig`, which will create a bases master configure table for users to add configurations in build phase, and then in VIP's build phase, the VIP will get that virtual interface through  the given configurations, and create a parameterized master configure table through interface controller (see [[vips/ahb5/src/src-rhAhb5If.sv]]), and the user configures will be cloned to the newly created configure table, and delete the old ones. Detailed information see [[vips/ahb5/src/src-rhAhb5MstAgent.svh#build_phase]].~~
 
 # Slave Device
 #TBD #Low

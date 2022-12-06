@@ -50,7 +50,7 @@ called when in `build_phase`, re-create the `config` field according to the exis
 if (!uvm_config_db#(RhAhb5IfControlBase)::get(null,"*",config.interfacePath,config.ifCtrl))
 	`uvm_fatal("NIFC","no interface controller get")
 ```
-For `config.ifCtrl`, refer to [[vips/ahb5/src-rhAhb5MstConfig.svh#Interface Controller]].
+For `config.ifCtrl`, refer to [[vips/ahb5/src/src-rhAhb5MstConfig.svh#Interface Controller]].
 ## setupSubComponents
 A function to create sub components.
 **func** `void setupSubComponents()`
@@ -65,10 +65,10 @@ mon = RhAhb5MstMonitor::type_id::create("mon",this);
 mon.config = config;
 ```
 reference:
-[[vips/ahb5/src-rhAhb5MstDriver.svh]]
+[[vips/ahb5/src/src-rhAhb5MstDriver.svh]]
 [[amba/ahb5/vip-rhAhb5MstSeqr.svh]], #TODO 
-[[vips/ahb5/src-rhAhb5MstConfig.svh]]
-[[vips/ahb5/src-rhAhb5MstMonitor.svh]]
+[[vips/ahb5/src/src-rhAhb5MstConfig.svh]]
+[[vips/ahb5/src/src-rhAhb5MstMonitor.svh]]
 ## connect_phase
 In connect phase, following ports will be connected:
 - reset ports from monitor to driver

@@ -88,7 +88,7 @@ s = vif.HRESETN;
 ## calculateCurrentAddress
 A function to get current address according to the input trans beat information.
 ref
-- [[vips/ahb5/src-rhAhb5Types.svh#RhAhb5TransBeat]]
+- [[vips/ahb5/src/src-rhAhb5Types.svh#RhAhb5TransBeat]]
 - [[#decodeHSizeToByte]]
 **lfunc** `bit[AW-1:0] __calculateCurrentAddress__(RhAhb5TransBeat b)`
 **proc**

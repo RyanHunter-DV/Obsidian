@@ -21,7 +21,7 @@ string interfacePath;
 bit busy = outstanding? 1'b1 : 1'b0;
 ifCtrl.driveAddressPhase(b,busy);
 ```
-reference: [[vips/ahb5/src-rhAhb5IfControlBase.svh#driveAddressPhase]];
+reference: [[vips/ahb5/src/src-rhAhb5IfControlBase.svh#driveAddressPhase]];
 ### sendDataPhase
 This task gets beat to drive data, and returns if interface detects error response, or else wait until the `HREADY` is high.
 **task** `sendDataPhase(RhAhb5TransBeat b,output isError)`
@@ -32,8 +32,8 @@ if (b.write)
 else ifCtrl.waitDataPhase(b,isError);
 ```
 reference:
-- [[vips/ahb5/src-rhAhb5IfControlBase.svh#driveDataPhase]];
-- [[vips/ahb5/src-rhAhb5IfControlBase.svh#waitDataPhase]];
+- [[vips/ahb5/src/src-rhAhb5IfControlBase.svh#driveDataPhase]];
+- [[vips/ahb5/src/src-rhAhb5IfControlBase.svh#waitDataPhase]];
 
 ## getResetChanged
 This task will the the interface controller's `waitResetChanged`
@@ -42,7 +42,7 @@ This task will the the interface controller's `waitResetChanged`
 ```systemverilog
 ifCtrl.getResetChanged(s);
 ```
-[[vips/ahb5/src-rhAhb5IfControlBase.svh#getResetChanged]]
+[[vips/ahb5/src/src-rhAhb5IfControlBase.svh#getResetChanged]]
 
 
 ## getSignal

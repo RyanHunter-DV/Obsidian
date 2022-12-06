@@ -7,7 +7,7 @@ This is an overall section about what and how many features the master driver ha
 - #TBD , more extra features will be added at later version.
 
 *reference links:*
-- [[vips/ahb5/src-rhAhb5ReqTrans.svh]]
+- [[vips/ahb5/src/src-rhAhb5ReqTrans.svh]]
 # Source Code
 **driver** `RhAhb5MstDriver`
 **tparam** `REQ=RhAhb5ReqTrans,RSP=RhAhb5RspTrans`
@@ -54,7 +54,7 @@ forever begin
 	outstandingData++;
 end
 ```
-reference: [[vips/ahb5/src-rhAhb5MstConfig.svh#sendAddressPhase]];
+reference: [[vips/ahb5/src/src-rhAhb5MstConfig.svh#sendAddressPhase]];
 In data phase driving, the `outstandingData` will be decreased when each data beat is sent (here sent means got by slave with HREADY high);
 ```systemverilog
 data = dataQue.pop_front();
@@ -85,7 +85,7 @@ end
 ```
 reference:
 - [[#processError]];
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#sendDataPhase]];
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#sendDataPhase]];
 
 ## random delay before sending a transaction
 For a master, only the start of an entire transaction can have delay, once the first beat is sent, the master should not insert any delay, special idle state by inserting BUSY trans should be given by the test create through a sequence, the driver itself cannot support this feature.
@@ -120,7 +120,7 @@ addressQue.delete();
 config.driveIdleBeat(1,outstandingData);
 ```
 reference:
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#driveIdleBeat]]; #TODO 
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#driveIdleBeat]]; #TODO 
 
 ## build_phase
 Doing basic initializations for driver component as  described in above.
@@ -162,7 +162,7 @@ end
 ```
 
 reference:
-- [[vips/ahb5/src-rhAhb5Types.svh#RhAhb5TransBeat]]
+- [[vips/ahb5/src/src-rhAhb5Types.svh#RhAhb5TransBeat]]
 - [[#splitTransToBeats]]
 
 ## splitTransToBeats
