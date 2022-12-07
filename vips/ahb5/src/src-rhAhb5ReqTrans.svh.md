@@ -22,6 +22,22 @@ constraint transnum_cst {
 	trans.size() inside {[1:4]};
 }
 ```
-macros defined in [[vips/ahb5/src/src-rhAhb5Types.svh]].
+**fieldutils**
+```systemverilog
+`uvm_field_int(burst,UVM_ALL_ON)
+`uvm_field_int(addr,UVM_ALL_ON)
+`uvm_field_int(prot,UVM_ALL_ON)
+`uvm_field_int(lock,UVM_ALL_ON)
+`uvm_field_int(size,UVM_ALL_ON)
+`uvm_field_int(nonsec,UVM_ALL_ON)
+`uvm_field_int(excl,UVM_ALL_ON)
+`uvm_field_int(master,UVM_ALL_ON)
+`uvm_field_int(write,UVM_ALL_ON)
+`uvm_field_int(delay,UVM_ALL_ON)
+`uvm_field_array_int(trans,UVM_ALL_ON)
+`uvm_field_array_int(wdata,UVM_ALL_ON)
+```
+
+macros defined in [[vips/ahb5/src-rhAhb5Types.svh]].
 The wdata is part of the request transaction, while the resp and data are in response transaction.
-The base transaction defined in [[vips/ahb5/src/src-rhAhb5TransBase.svh]].
+The base transaction defined in [[vips/ahb5/src-rhAhb5TransBase.svh]].
