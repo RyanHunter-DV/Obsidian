@@ -103,10 +103,10 @@ end
 ```
 *feature libs*
 - [[rhRVCore/v1/libs/src-feature.rhda]]
-- [[libs/de/features/src-logicFeatures#bitor]]
-- [[libs/de/features/src-logicFeatures#hightolowPArbitor]]
-- [[libs/de/features/src-logicFeatures#concat]]
-- [[libs/de/features/src-logicFeatures#combineMux]]
+- [[libs/de/features-archive/src-logicFeatures#bitor]]
+- [[libs/de/features-archive/src-logicFeatures#hightolowPArbitor]]
+- [[libs/de/features-archive/src-logicFeatures#concat]]
+- [[libs/de/features-archive/src-logicFeatures#combineMux]]
 
 ## strategy 2 for feature example
 ```ruby
