@@ -100,4 +100,25 @@ it's a xml like file, has features like:
 ```
 
 ## app
-#TODO 
+The app tool is implicitly loaded while in the source of the `setup.*` program while logging in.
+According to different shell type, the different `__app__.*` will be applied to the alias command.
+*major procedures of the app*
+- `__app__.*`, the entry of this tool according to different shell type
+- pre-process the command by an internal script: `__optionProcess__.rb`
+	- for command: `app load xcelium`, will give out an implicity version: current for the app main program: `app load xcelium current`
+	- for others like: `app load xcelium/22.02.2`, will give out 4 separated params: `app load xcelium 22.02.2`
+- finding `app.config` file within the specific path: `/tools/xcelium/current`
+	- if not find the file, then return imm
+- if find the file, then call a local script to process the xml like formatted `app.config` file, call `__appConfigProcess__.rb <file>`
+	- current supported format of `app.config` are: [[#app config format]]
+- the app config processor will return different commands by screen print, and the main app will eval it to setup environments
+*file structures*
+it's too simple so just defined in while in code implementation.
+### app config format
+```xml
+<env>
+	<var>envVar</var>
+	<val>value</val>
+</env>
+```
+
