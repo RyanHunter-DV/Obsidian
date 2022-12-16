@@ -17,7 +17,7 @@ config.getResetChanged(sig);
 s = RhResetState_enum'(sig);
 ```
 reference:
-- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getResetChanged]]
+- [[vips/ahb5/src-rhAhb5MstConfig.svh#getResetChanged]]
 ## mainProcess
 This is the main process task for monitoring the request/response information.
 **vtask** `mainProcess()`
@@ -60,7 +60,7 @@ forever begin
 	if (req.write==1) begin
 		__collectWriteData(req);
 		wreqP.write(req);
-	end
+	end else config.waitCycle();
 end
 ```
 ### local task waitRequestValid
@@ -75,8 +75,8 @@ do begin
 end while (!done);
 ```
 reference:
-- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#waitCycle]]
-- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src-rhAhb5MstConfig.svh#waitCycle]]
+- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
 ### local func collectAddressPhaseInfo
 A function to get signal value from interface and recorded into req
 **lfunc** `void __collectAddressPhaseInfo(ref RhAhb5ReqTrans r)`
@@ -93,7 +93,7 @@ r.lock  = config.getSignal("HLOCK");
 r.write = config.getSignal("HWRITE");
 ```
 reference:
-- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
 ### local task collectWriteData
 A task to wait one cycle and get current HWDATA from the interface
 **ltask** `__collectWriteData(ref RhAhb5ReqTrans r)`
@@ -104,7 +104,7 @@ r.wdata = new[1];
 r.wdata[0] = config.getSignal("HWDATA");
 ```
 reference:
-- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
 ## support monitoring responses
 #TODO 
 monitor the response transaction, sending response for each htrans, and sends along with the request information. 
@@ -131,7 +131,7 @@ end
 ```
 
 reference:
-- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
 
 ### local task waitReadyHigh
 A task to wait HREADY high synchronizely by HCLK
@@ -144,7 +144,7 @@ while (!done) begin
 end
 ```
 reference:
-- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
 
 ### build phase
 **build**

@@ -17,16 +17,16 @@ bit[AW-1:0] addr = __calculateCurrentAddress__(b);
 vif.HADDR  <= addr;
 
 vif.HTRANS <= b.trans;
-if (b.trans==RHAHB5_NONSEQ) begin
-	vif.HBURST <= b.burst;
-	vif.HWRITE <= b.write;
-	vif.HSIZE  <= b.size;
-	vif.HPROT  <= b.prot;
-	vif.HMASTLOCK <= b.lock;
-	vif.HMASTER <= b.master;
-	vif.HNONSEC <= b.nonsec;
-	vif.HEXCL   <= b.excl;
-end
+
+vif.HBURST <= b.burst;
+vif.HWRITE <= b.write;
+vif.HSIZE  <= b.size;
+vif.HPROT  <= b.prot;
+vif.HMASTLOCK <= b.lock;
+vif.HMASTER <= b.master;
+vif.HNONSEC <= b.nonsec;
+vif.HEXCL   <= b.excl;
+
 if (waitReady) __waitHREADYSyncd__(1);
 else @(posedge vif.HCLK);
 
@@ -88,7 +88,7 @@ s = vif.HRESETN;
 ## calculateCurrentAddress
 A function to get current address according to the input trans beat information.
 ref
-- [[vips/ahb5/src/src-rhAhb5Types.svh#RhAhb5TransBeat]]
+- [[vips/ahb5/src-rhAhb5Types.svh#RhAhb5TransBeat]]
 - [[#decodeHSizeToByte]]
 **lfunc** `bit[AW-1:0] __calculateCurrentAddress__(RhAhb5TransBeat b)`
 **proc**
