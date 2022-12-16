@@ -13,7 +13,7 @@ Examples:
 class ADriver extends uvm_driver;
 
 	function new(string name="xxx",uvm_component parent=null);
-		`rhudbg_register(ADriver)
+		// `rhudbg_register(ADriver)
 	endfunction
 
 	function void userFunction(int a);

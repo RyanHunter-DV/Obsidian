@@ -1,6 +1,12 @@
 
 # Source Code
 **object** `RhuDebugPool`
+**field**
+```systemverilog
+`include "uvm_macros.svh"
+import uvm_pkg::*;
+typedef string rhudbgStringQueue_t [$];
+```
 ## the static creating and handle
 **field**
 ```systemverilog
@@ -47,11 +53,14 @@ uvm_object fullInstPaths[string];
 - 
 ## setupUserOptions
 The function to process options in command line and recorded into local configuration.
+Should support multiple settings like:
+```
++RHUDBG="uvm_test_env.env,SPECIFICID;uvm_test_env.env.mst,SPECIFICID"
+```
 **field**
 ```systemverilog
 string enabledIDs[string];
 ```
-**func** `void __setupUserOptions__()`
 *procedures*
 - get string from `$value$plusargs`
 - check string, split it by `,` the former ones are instance path, while the latter ones are id
@@ -61,24 +70,49 @@ string enabledIDs[string];
 	- if not, then directly assign to it;
 - if single ID, behave similar as above steps
 - return
+**func** `void __setupUserOptions__()`
 **proc** 
 ```systemverilog
 string option;
-string path;
-string id;
+string paths[$];
+string ids[$];
 
 // version 1, only support adding once through the user command line.
-$value$plusargs("+RHUDBG=%s",option);
-__splitUserOption__(option,path,id);
-enabledIDs[path] = id;
+$value$plusargs("RHUDBG=%s",option);
+__splitUserOption__(option,paths,ids);
+foreach (paths[i]) enabledIDs[paths[i]] = ids[i];
 
 ```
 *relative links*
 - [[#splitUserOption|__splitUserOption__()]]
 
 ## splitUserOption
+To separate multiple options by ';', and then split the path and id for each separated options
+**lfunc** `void __splitUserOption__(string option,ref string paths[$],ref string ids[$])`
+**proc**
+```systemverilog
+string options[$];
+int len = option.len();int lastpos = 0;
+if (option[len-1]==";") option = option.substr(0,len-2);
+
+for (int idx=0;idx<option.len();idx++) begin
+	if (option[idx]==";") begin
+		options.push_back(option.substr(lastpos,idx-1));
+		lastpos = idx+1;
+	end
+end
+foreach (options[i]) begin
+	string path, id;
+	__splitOnePathIdOption__(options[i],path,id);
+	paths.push_back(path);
+	ids.push_back(id);
+end
+```
+
+
+## splitOnePathIdOption
 The local function to split path/id from user option like: `+RHUDBG=<path>,<id>`
-**lfunc** `void __splitUserOption__(string option, ref string path, ref string id)`
+**lfunc** `void __splitOnePathIdOption__(string option, ref string path, ref string id)`
 **proc**
 ```systemverilog
 int len = option.len();
@@ -104,7 +138,7 @@ if (__processedID__(id,obj.get_full_name())) return;
 begin
 	uvm_component comp=isaComponent(obj);
 	uvm_report_handler rh;
-	UVM_FILE file = $fopen(obj.get_full_name(),"w"));
+	UVM_FILE file = $fopen({obj.get_full_name(),".log"},"w");
 	if (comp==null) begin
 		uvm_coreservice_t cs=uvm_coreservice_t::get();
 		uvm_root top = cs.get_root();
@@ -155,7 +189,7 @@ return 1'b0;
 
 ## splitidsToQueue
 local function to split a given string to id queue by the fixed separator: `|`. This function now can only split IDS like: "ID0|ID1|...|"
-**lfunc** `string[] __splitidsToQueue__(string s)`
+**lfunc** `rhudbgStringQueue_t __splitidsToQueue__(string s)`
 **proc**
 ```systemverilog
 int len = s.len();
@@ -172,7 +206,7 @@ return q;
 
 ## isaComponent
 local function to detect if the given obj is of type component, if is, return the casted component, else return null
-*lfunc* `uvm_component isaComponent(uvm_object obj)`
+**lfunc** `uvm_component isaComponent(uvm_object obj)`
 **proc**
 ```systemverilog
 uvm_component comp;
