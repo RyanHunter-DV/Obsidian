@@ -1,6 +1,10 @@
 # Source Code
 
 **package** `RhAhb5Vip`
+**head**
+```
+rhuMacros.svh
+```
 **include**
 ```
 rhAhb5If.sv
@@ -8,6 +12,7 @@ rhAhb5If.sv
 **import**
 ```systemverilog
 Rhlib::*;
+rhudbg::*; // add uvm debug package
 ```
 **include**
 ```systemverilog
