@@ -1,3 +1,12 @@
+DPI based C++ Verification Platform
+
+*feature requirements*
+- to support constrainted randomization.
+- #TBD 
+
+
+
+
 In the 1st version of rhVM, need to plan four kind of verification scope environment.
 - ut level
 - sub-ip level

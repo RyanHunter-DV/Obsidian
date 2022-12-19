@@ -43,7 +43,7 @@ The display will automatically use UVM_LOW, so need to set the uvm verbosity hig
 ## create objects with some of the auto debug information
 This can be achieved by the `MDC` tool, that in building classes, the debug information will be automatically added to it.
 #TBD 
-[[mdc/arch-requirements]]
+[[mdc/v3/arch-requirements]]
 
 ## dump interface signals
 #TBD 

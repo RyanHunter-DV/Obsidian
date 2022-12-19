@@ -75,7 +75,4 @@ seq.start(dev.seqr);
 ```
 
 # VIP Test
-## master only test
-- compile pass
-- base transactions driven on interface
-- build up base test env
+[[vips/ahb5/test/testplan-overview]]
