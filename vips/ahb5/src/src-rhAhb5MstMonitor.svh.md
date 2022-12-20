@@ -41,7 +41,7 @@ This is a queue to store the HWRITE vlaue of current request detected by `reqMon
 ```
 bit reqWriteInfo[$];
 ```
-### main entry of request monitor
+### reqMonitor
 To monitor requests, the main entry task is `reqMonitor` which will be called in `mainProcess` and monitoring two type of requests with the major procedures:
 - detect address phase of a request (hready high + htrans not idle);
 - translate and send the address phase information through `reqP`;
@@ -50,7 +50,6 @@ To monitor requests, the main entry task is `reqMonitor` which will be called in
 **ltask** `reqMonitor()`
 **proc** #TODO 
 ```systemverilog
-
 forever begin
 	RhAhb5ReqTrans req=new("req");
 	__waitRequestValid();
@@ -128,7 +127,7 @@ reference:
 #TODO 
 monitor the response transaction, sending response for each htrans, and sends along with the request information. 
 **tlm-ap** `RhAhb5RspTrans rspP`
-## main entry of response monitor
+## rspMonitor
 The `rspMonitor` is the entry of the ahb5 response monitor, which will detect the hresp and hready signal, and will have following procedures:
 - wait hready high
 - if hresp has error, then record resp, pop reqInfo, and send back immediately

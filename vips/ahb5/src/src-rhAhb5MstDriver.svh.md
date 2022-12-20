@@ -150,44 +150,44 @@ This is a forever loop for waiting and processing sequence items from test level
 **proc**
 ```systemverilog
 forever begin
-	REQ cloned;
-	RhAhb5TransBeat beats[$];
+	RhAhb5TransBeat beat;
 	seq_item_port.get_next_item(req);
-	reqP.write(req.clone());
+	reqP.write(req.clone()); // send to monitor for self check
 	processDelay(req.delay);
-	splitTransToBeats(req,beats);
-	foreach (beats[i]) addressQue.push_back(beats[i]);
-	wait (addressQue.size()==0); // only when this trans finished, can next coming in.
+	// @RyanH,TODO, to be deleted, splitTransToBeats(req,beats);
+	// @RyanH,TODO, to be deleted, foreach (beats[i]) addressQue.push_back(beats[i]);
+	// @RyanH,TODO, to be deleted, wait (addressQue.size()==0); // only when this trans finished, can next coming in.
+
+	// new added steps
+	convertTransToBeats(req,beat);
+	addressQue.push_back(beat);
+	wait(addressQue.size()==0);
+
 	seq_item_port.item_done();
 end
 ```
 
 reference:
 - [[vips/ahb5/src/src-rhAhb5Types.svh#RhAhb5TransBeat]]
-- [[#splitTransToBeats]]
+- [[#convertTransToBeats]]
 
-## splitTransToBeats
+## convertTransToBeats
 A function to split the whole transaction into many beats that has one address, htrans and data etc, information.
-**func** `void splitTransToBeats(REQ tr,ref RhAhb5TransBeat beats[$])`
+**func** `void convertTransToBeats(REQ tr,ref RhAhb5TransBeat beat)`
 **proc**
 ```systemverilog
-foreach (tr.trans[i]) begin
-	RhAhb5TransBeat beat;
-	beat.index = i;
-	beat.burst = tr.burst;
-	beat.trans = tr.trans[i];
-	beat.write = tr.write;
-	if (beat.write) beat.data = tr.wdata[i];
-	beat.addr  = tr.addr;
-	beat.master= tr.master;
-	beat.size  = tr.size;
-	beat.lock  = tr.lock;
-	beat.prot  = tr.prot;
-	beat.nonsec= tr.nonsec;
-	beat.excl  = tr.excl;
-
-	beats.push_back(beat);
-end
+beat.index = i;
+beat.burst = tr.burst;
+beat.trans = tr.trans;
+beat.write = tr.write;
+if (beat.write) beat.data = tr.wdata;
+beat.addr  = tr.addr;
+beat.master= tr.master;
+beat.size  = tr.size;
+beat.lock  = tr.lock;
+beat.prot  = tr.prot;
+beat.nonsec= tr.nonsec;
+beat.excl  = tr.excl;
 ```
 
 
