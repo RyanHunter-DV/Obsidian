@@ -1,4 +1,7 @@
 # Source Code
+One transaction indicates to one htrans of an ahb burst, so that users can have maximum flexibility
+to control their intends to send the request. The VIP will encapsulate a burst sequence that can
+send typical burst by triggering multiple transactions.
 **transaction** `RhAhb5ReqTrans`
 **base** `RhAhb5TransBase`
 **field**
@@ -11,16 +14,17 @@ rand bit [2:0] size;
 rand bit nonsec;
 rand bit excl;
 rand bit [3:0] master;
-rand bit [1:0] trans[];
-rand bit [`RHAHB5_DW_MAX-1:0] wdata[];
+rand bit [1:0] trans;
+rand bit [`RHAHB5_DW_MAX-1:0] wdata;
 rand bit write;
 rand int delay;
 
-constraint delay_cst {delay inside {[0:100]};}
-constraint transnum_cst {
-	trans.size() == wdata.size();
-	trans.size() inside {[1:4]};
-}
+constraint delay_cst {
+	if (trans==2'h2) {
+		delay inside {[0:100]};
+	} else {
+		delay == 0; // for IDLE/SEQ/BUSY, delay is disabled by default
+	}
 ```
 **fieldutils**
 ```systemverilog
@@ -34,8 +38,8 @@ constraint transnum_cst {
 `uvm_field_int(master,UVM_ALL_ON)
 `uvm_field_int(write,UVM_ALL_ON)
 `uvm_field_int(delay,UVM_ALL_ON)
-`uvm_field_array_int(trans,UVM_ALL_ON)
-`uvm_field_array_int(wdata,UVM_ALL_ON)
+`uvm_field_int(trans,UVM_ALL_ON)
+`uvm_field_int(wdata,UVM_ALL_ON)
 ```
 
 macros defined in [[vips/ahb5/src-rhAhb5Types.svh]].
