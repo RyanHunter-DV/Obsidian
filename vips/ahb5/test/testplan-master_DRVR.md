@@ -27,7 +27,7 @@ lists which points should be covered
 ## basicTransfers
 **Category** `basic`
 
-### single burst
+### single burst test
 **SubKeys** `SINGLE`
 **BaseStrategy**
 ```
@@ -55,7 +55,19 @@ check the delay, if send delay is 0, this packet should only has 1 cycle delayed
 ```
 **Testname** `rhahb5Mst_basic_SINGLE_test`
 
-## incr burst
+## incr burst test
 **SubKeys** `INCR`
-**BaseStrategy**
+**Stimulus**
+```
+1. set burst type to INCR
+2. a randomized length of burst, size is 1~16
+	1. set first trans to NONSEQ
+	2. others are SEQ type
+3. constraint address and bytes to transmit, should not cross the 4KB boundary
+
+```
+**Checker**
+```
+
+```
 #TODO 

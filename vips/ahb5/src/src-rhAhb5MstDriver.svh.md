@@ -153,6 +153,7 @@ forever begin
 	REQ cloned;
 	RhAhb5TransBeat beats[$];
 	seq_item_port.get_next_item(req);
+	reqP.write(req.clone());
 	processDelay(req.delay);
 	splitTransToBeats(req,beats);
 	foreach (beats[i]) addressQue.push_back(beats[i]);
@@ -190,6 +191,11 @@ end
 ```
 
 
+## self check mechanism
+To check the packet of the VIP, the transactions got from driver will be sent a copy to the monitor, once the monitor detected a request/response, it will compare with the original transaction, to check if the packet sent by driver is same with the transaction sent by driver.
+**tlm-ap** `REQ reqP`
 
-
+*relative links*
+- [[vips/ahb5/src/src-rhAhb5MstMonitor.svh]]
+- 
 

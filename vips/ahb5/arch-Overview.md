@@ -76,3 +76,5 @@ seq.start(dev.seqr);
 
 # VIP Test
 [[vips/ahb5/test/testplan-overview]]
+- using self checker, to check the protocol.
+- 

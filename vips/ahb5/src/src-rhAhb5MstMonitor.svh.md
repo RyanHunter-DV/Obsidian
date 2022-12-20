@@ -17,7 +17,7 @@ config.getResetChanged(sig);
 s = RhResetState_enum'(sig);
 ```
 reference:
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#getResetChanged]]
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getResetChanged]]
 ## mainProcess
 This is the main process task for monitoring the request/response information.
 **vtask** `mainProcess()`
@@ -61,7 +61,26 @@ forever begin
 		__collectWriteData(req);
 		wreqP.write(req);
 	end else config.waitCycle();
+	__reqSelfCheck__(req);
 end
+```
+## reqSelfCheck
+A local function to compare the two transactions from test level and from monitor, only to check the request sent by driver is correct.
+**lfunc** `void __reqSelfCheck__(REQ act)`
+**proc**
+```systemverilog
+REQ exp;
+`rhudbg("__reqSelfCheck__","starting ...")
+if (expReqQue.size()==0) begin
+	`uvm_fatal("SELFCHECK","no expected transaction should be sent by this VIP")
+	return;
+end
+exp = reqExpQue.pop_front();
+if (exp.compare(act))
+	`uvm_fatal("SELFCHECK",$sformatf("driver/monitor req compare failed, trans to be sent is\n%s\ntrans collected is\n%s",exp.sprint(),act.sprint()))
+else
+	`rhudbg("CHECKPASS","driver/monitor req compare passed, driver has sent an expected transaction")
+return;
 ```
 ### local task waitRequestValid
 A task to wait the htrans not idle and hready is high, synchronizely with hclk
@@ -75,8 +94,8 @@ do begin
 end while (!done);
 ```
 reference:
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#waitCycle]]
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#waitCycle]]
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
 ### local func collectAddressPhaseInfo
 A function to get signal value from interface and recorded into req
 **lfunc** `void __collectAddressPhaseInfo(ref RhAhb5ReqTrans r)`
@@ -93,7 +112,7 @@ r.lock  = config.getSignal("HLOCK");
 r.write = config.getSignal("HWRITE");
 ```
 reference:
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
 ### local task collectWriteData
 A task to wait one cycle and get current HWDATA from the interface
 **ltask** `__collectWriteData(ref RhAhb5ReqTrans r)`
@@ -104,7 +123,7 @@ r.wdata = new[1];
 r.wdata[0] = config.getSignal("HWDATA");
 ```
 reference:
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
 ## support monitoring responses
 #TODO 
 monitor the response transaction, sending response for each htrans, and sends along with the request information. 
@@ -131,7 +150,7 @@ end
 ```
 
 reference:
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
 
 ### local task waitReadyHigh
 A task to wait HREADY high synchronizely by HCLK
@@ -144,7 +163,7 @@ while (!done) begin
 end
 ```
 reference:
-- [[vips/ahb5/src-rhAhb5MstConfig.svh#getSignal]]
+- [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
 
 ### build phase
 **build**
@@ -153,3 +172,16 @@ reqP = new("reqP",this);
 rspP = new("rspP",this);
 wreqP= new("wreqP",this);
 ```
+
+## get request trans and compare
+**tlm-ai** `selfcheckExp REQ reqI`
+```systemverilog
+`rhudbg("write_selfcheckExp",$sformatf("get the exp req:\n%s",_t.sprint()))
+expReqQue.push_back(_t);
+```
+**field**
+```systemverilog
+REQ expReqQue[$];
+```
+[[#main entry of request monitor]]
+
