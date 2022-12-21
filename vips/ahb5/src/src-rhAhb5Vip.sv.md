@@ -29,5 +29,6 @@ rhAhb5MstSeqr.svh
 rhAhb5MstDriver.svh
 rhAhb5MstMonitor.svh
 rhAhb5MstAgent.svh
+seqlib/rhAhb5SingleBurstSeq.svh
 // TODO
 ```

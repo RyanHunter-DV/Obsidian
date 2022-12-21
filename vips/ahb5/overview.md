@@ -1,3 +1,10 @@
+# Introduction
+This dir will be the project root dir as in the ==vips== project.
+*sketches*
+The `be-build` tools will be a collection of calling different markdown converters to translate
+different formatted files into a project dir.
+# File Structure and links
+- [[vips/ahb5/src/overview]]
 # base features
 - [[#Base Architecture]], indicates the basic vip package and file structures.
 - [[#Master Device]], act as an ahb master.
@@ -75,6 +82,5 @@ seq.start(dev.seqr);
 ```
 
 # VIP Test
-[[vips/ahb5/test/testplan-overview]]
 - using self checker, to check the protocol.
 - 
