@@ -47,3 +47,9 @@ typedef struct {
 	bit excl;
 } RhAhb5TransBeat;
 ```
+
+## analysis imps decl
+**field**
+```systemverilog
+`uvm_analysis_imp_decl(_selfcheckExp)
+```

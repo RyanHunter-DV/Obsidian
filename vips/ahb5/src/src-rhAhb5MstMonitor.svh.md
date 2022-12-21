@@ -65,16 +65,16 @@ end
 ```
 ## reqSelfCheck
 A local function to compare the two transactions from test level and from monitor, only to check the request sent by driver is correct.
-**lfunc** `void __reqSelfCheck__(REQ act)`
+**lfunc** `void __reqSelfCheck__(RhAhb5ReqTrans act)`
 **proc**
 ```systemverilog
-REQ exp;
+RhAhb5ReqTrans exp;
 `rhudbg("__reqSelfCheck__","starting ...")
 if (expReqQue.size()==0) begin
 	`uvm_fatal("SELFCHECK","no expected transaction should be sent by this VIP")
 	return;
 end
-exp = reqExpQue.pop_front();
+exp = expReqQue.pop_front();
 if (exp.compare(act))
 	`uvm_fatal("SELFCHECK",$sformatf("driver/monitor req compare failed, trans to be sent is\n%s\ntrans collected is\n%s",exp.sprint(),act.sprint()))
 else
@@ -100,8 +100,7 @@ A function to get signal value from interface and recorded into req
 **lfunc** `void __collectAddressPhaseInfo(ref RhAhb5ReqTrans r)`
 **proc**
 ```systemverilog
-r.trans = new[1]; // only 1 trans each for monitor
-r.trans[0] = config.getSignal("HTRANS");
+r.trans = config.getSignal("HTRANS");
 r.burst = config.getSignal("HBURST");
 r.addr  = config.getSignal("HADDR");
 r.size  = config.getSignal("HSIZE");
@@ -118,8 +117,7 @@ A task to wait one cycle and get current HWDATA from the interface
 **proc**
 ```systemverilog
 config.waitCycle();
-r.wdata = new[1];
-r.wdata[0] = config.getSignal("HWDATA");
+r.wdata = config.getSignal("HWDATA");
 ```
 reference:
 - [[vips/ahb5/src/src-rhAhb5MstConfig.svh#getSignal]]
@@ -173,14 +171,14 @@ wreqP= new("wreqP",this);
 ```
 
 ## get request trans and compare
-**tlm-ai** `selfcheckExp REQ reqI`
+**tlm-ai** `selfcheckExp RhAhb5ReqTrans reqI`
 ```systemverilog
-`rhudbg("write_selfcheckExp",$sformatf("get the exp req:\n%s",_t.sprint()))
-expReqQue.push_back(_t);
+`rhudbg("write_selfcheckExp",$sformatf("get the exp req:\n%s",_tr.sprint()))
+expReqQue.push_back(_tr);
 ```
 **field**
 ```systemverilog
-REQ expReqQue[$];
+RhAhb5ReqTrans expReqQue[$];
 ```
 [[#main entry of request monitor]]
 

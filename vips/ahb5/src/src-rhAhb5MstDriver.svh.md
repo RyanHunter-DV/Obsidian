@@ -127,6 +127,7 @@ Doing basic initializations for driver component as  described in above.
 **build**
 ```systemverilog
 outstandingData = 0;
+reqP=new("reqP",this);
 ```
 
 ## mainProcess
@@ -151,8 +152,10 @@ This is a forever loop for waiting and processing sequence items from test level
 ```systemverilog
 forever begin
 	RhAhb5TransBeat beat;
+	REQ _reqClone;
 	seq_item_port.get_next_item(req);
-	reqP.write(req.clone()); // send to monitor for self check
+	$cast(_reqClone,req.clone());
+	reqP.write(_reqClone); // send to monitor for self check
 	processDelay(req.delay);
 	// @RyanH,TODO, to be deleted, splitTransToBeats(req,beats);
 	// @RyanH,TODO, to be deleted, foreach (beats[i]) addressQue.push_back(beats[i]);
@@ -176,7 +179,7 @@ A function to split the whole transaction into many beats that has one address, 
 **func** `void convertTransToBeats(REQ tr,ref RhAhb5TransBeat beat)`
 **proc**
 ```systemverilog
-beat.index = i;
+// @RyanH beat.index = i;
 beat.burst = tr.burst;
 beat.trans = tr.trans;
 beat.write = tr.write;
