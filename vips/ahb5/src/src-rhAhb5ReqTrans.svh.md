@@ -24,7 +24,7 @@ constraint delay_cst {
 		delay inside {[0:100]};
 	} else {
 		delay == 0; // for IDLE/SEQ/BUSY, delay is disabled by default
-	};
+	}
 };
 ```
 **fieldutils**
