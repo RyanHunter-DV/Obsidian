@@ -3,8 +3,7 @@
 **object** `RhuDebugPool`
 **field**
 ```systemverilog
-`include "uvm_macros.svh"
-import uvm_pkg::*;
+
 typedef string rhudbgStringQueue_t [$];
 ```
 ## the static creating and handle
@@ -93,7 +92,7 @@ To separate multiple options by ';', and then split the path and id for each sep
 ```systemverilog
 string options[$];
 int len = option.len();int lastpos = 0;
-if (option[len-1]==";") option = option.substr(0,len-2);
+if (option[len-1]!=";") option = {option,";"};
 
 for (int idx=0;idx<option.len();idx++) begin
 	if (option[idx]==";") begin
