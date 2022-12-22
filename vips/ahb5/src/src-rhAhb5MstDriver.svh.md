@@ -49,6 +49,7 @@ forever begin
 	RhAhb5TransBeat beat;
 	wait(addressQue.size());
 	beat = addressQue.pop_front();
+	`rhudbg("startAddressPhaseThread",$sformatf("driving beat:\n%p",beat))
 	config.sendAddressPhase(beat,outstandingData);
 	dataQue.push_back(beat);
 	outstandingData++;
@@ -153,7 +154,12 @@ This is a forever loop for waiting and processing sequence items from test level
 forever begin
 	RhAhb5TransBeat beat;
 	REQ _reqClone;
-	seq_item_port.get_next_item(req);
+	seq_item_port.try_next_item(req);
+	if (req==null) begin
+		`rhudbg("startSeqProcess","driving idle beat")
+		__sendIdleBeat__();
+		seq_item_port.get_next_item(req);
+	end
 	$cast(_reqClone,req.clone());
 	reqP.write(_reqClone); // send to monitor for self check
 	processDelay(req.delay);
@@ -164,8 +170,9 @@ forever begin
 	// new added steps
 	convertTransToBeats(req,beat);
 	addressQue.push_back(beat);
-	wait(addressQue.size()==0);
-
+	// @RyanH wait(addressQue.size()==0);
+	// need wait at least one cycle before geting next sequence
+	config.waitCycle();
 	seq_item_port.item_done();
 end
 ```
@@ -173,6 +180,28 @@ end
 reference:
 - [[vips/ahb5/src/src-rhAhb5Types.svh#RhAhb5TransBeat]]
 - [[#convertTransToBeats]]
+- [[#sendIdleBeat|__sendIdleBeat__]]
+
+## sendIdleBeat
+internal function to drive signals to idle status
+**ltask** `__sendIdleBeat__()`
+**proc**
+```systemverilog
+RhAhb5TransBeat beat;
+beat.burst = 0;
+beat.trans = 0;
+beat.write = 0;
+beat.data  = 0;
+beat.addr  = 0;
+beat.master= 0;
+beat.size  = 0;
+beat.lock  = 0;
+beat.prot  = 0;
+beat.nonsec= 0;
+beat.excl  = 0;
+// @RyanH assume this drive will not take any sim time.
+config.sendAddressPhase(beat,0);
+```
 
 ## convertTransToBeats
 A function to split the whole transaction into many beats that has one address, htrans and data etc, information.

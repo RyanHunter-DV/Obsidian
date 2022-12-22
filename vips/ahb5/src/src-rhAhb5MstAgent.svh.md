@@ -79,6 +79,7 @@ In connect phase, following ports will be connected:
 if (is_active==UVM_ACTIVE) begin
 	mon.resetP.connect(drv.resetI);
 	drv.seq_item_port.connect(seqr.seq_item_export);
+	drv.reqP.connect(mon.reqI);
 end
 mon.reqP.connect(reqP);
 mon.rspP.connect(rspP);

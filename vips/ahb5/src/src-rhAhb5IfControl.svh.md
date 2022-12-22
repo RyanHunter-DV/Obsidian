@@ -28,7 +28,10 @@ vif.HNONSEC <= b.nonsec;
 vif.HEXCL   <= b.excl;
 
 if (waitReady) __waitHREADYSyncd__(1);
-else @(posedge vif.HCLK);
+else begin
+	// @RyanH only when the trans is not idle, then it need wait one cycle
+	if (b.trans!=0) @(posedge vif.HCLK);
+end
 
 ```
 reference:

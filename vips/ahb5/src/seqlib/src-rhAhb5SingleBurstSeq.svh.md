@@ -51,7 +51,7 @@ _req.randomize() with {
 	master== __master;
 	wdata == __wdata ;
 	write == __write ;
-	delay == __delay ;
+// @RyanH	delay == __delay ;
 };
 `rhudbg("body",$sformatf("start item:\n%s",_req.sprint()))
 start_item(_req);

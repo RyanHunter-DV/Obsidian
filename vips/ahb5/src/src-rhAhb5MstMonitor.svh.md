@@ -55,9 +55,11 @@ forever begin
 	__waitRequestValid();
 	__collectAddressPhaseInfo(req);
 	reqWriteInfo.push_back(req.write);
+	`rhudbg("reqMonitor",$sformatf("send packet to reqP\n%s",req.sprint()))
 	reqP.write(req);
 	if (req.write==1) begin
 		__collectWriteData(req);
+		`rhudbg("reqMonitor",$sformatf("send packet to wreqP,with wdata\n%s",req.sprint()))
 		wreqP.write(req);
 	end else config.waitCycle();
 	__reqSelfCheck__(req);
@@ -168,6 +170,7 @@ reference:
 reqP = new("reqP",this);
 rspP = new("rspP",this);
 wreqP= new("wreqP",this);
+reqI = new("reqI",this);
 ```
 
 ## get request trans and compare

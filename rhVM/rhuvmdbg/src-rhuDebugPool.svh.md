@@ -137,7 +137,7 @@ if (__processedID__(id,obj.get_full_name())) return;
 begin
 	uvm_component comp=isaComponent(obj);
 	uvm_report_handler rh;
-	UVM_FILE file = $fopen({obj.get_full_name(),".log"},"w");
+	UVM_FILE file = __getLogger__({obj.get_full_name(),".log"});
 	if (comp==null) begin
 		uvm_coreservice_t cs=uvm_coreservice_t::get();
 		uvm_root top = cs.get_root();
@@ -153,6 +153,26 @@ return;
 *relative links*
 - [[#processedID|__processedID__()]]
 - [[#addProcessedID|__addProcessedID__()]]
+- [[#getLogger|__getLogger__()]]
+
+
+## getLogger
+This local function will check if a specified component inst's log file is opened or not.
+If opened, then return the file handler, else open a new one and record it ot class member
+**field**
+```systemverilog
+UVM_FILE openedFiles[string];
+```
+**lfunc** `UVM_FILE __getLogger__(string fn)`
+**proc**
+```systemverilog
+UVM_FILE file;
+if (openedFiles.exists(fn)) return openedFiles[fn];
+file = $fopen(fn,"w");
+openedFiles[fn] = file;
+return file;
+```
+
 
 ## addProcessedID
 The local function to add specific id to the specified path.
