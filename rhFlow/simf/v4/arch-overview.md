@@ -1,5 +1,15 @@
 # Features
 
+- [[#define configurable components]]
+- [[#setup tests]]
+- [[#easy dependencies]]
+- [[#redefine a component]]
+- [[#special EDA options for a component]], #TBD 
+- [[#builtin components/packages]], #TBD 
+- [[#evaluation commands]], #TBD 
+- [[#plugin flows]], #TBD 
+
+
 ## define configurable components
 in a `config`, it can need a component with different configuration packs, such as simulation options in different `config`. So that it can build up a project easier.
 Using examples:
@@ -10,7 +20,7 @@ config :testConfig do
 end
 ```
 
-# setup tests
+## setup tests
 To run a test with UVM, a testname is required, besides, the config name should be specified by the test definition.
 like:
 ```ruby
@@ -72,9 +82,9 @@ attention that fileset will not search files recursively, so if you have files w
 
 ### multiple component in one project tree
 we can only sync with one project at a time, but a project may contain multiple components, so how to manage syncing components in this way?
-every component will have a root package, it can only been declared at the root of a project like:
+every component will have a root context, it can only been declared at the root of a project like:
 ```
-package :vips do
+context :vips do
 	component :RhAhb5Vip
 	component :RhAxi4Vip
 end
@@ -111,10 +121,40 @@ end
 *Rhlib*
 #TBD 
 
+## evaluation commands
+The evaluation command is entered by user through an `-e 'command'` option, to execute different flows plugged in by the simf. 
+For example, to run simulation with xcelium tool, can call like:
+```
+simf -e 'xcelium.build(:configName)' ## build
+simf -e 'xcelium.compile(:testName)' ## build->compile
+simf -e 'xcelium.run(:testName)' ## build->compile->sim
+simf -e 'xcelium.sim(:testName)' ## sim
+```
+
+
+## plugin flows
+Different flows can be plugged in with coding added in `lib/plugins.rb`, some of the builtin flows is `xcelium.rb`.
+plugin ideas, like:
+```ruby
+rhload 'lib/xcelium'
+plugin :xcelium
+...
+```
+
+
+## sync up components
+The tool support to sync up components by `-s`, like:
+```
+simf -s ## sync up only
+simf -s -e 'xxxx' ## evaluation with sync up first
+```
+
+
 
 
 # Architecture
 [[rhFlow/simf/v4/architecture]]
+
 
 
 #TODO 
