@@ -1,2 +1,0 @@
-# Obsidian
-The Second Brain
