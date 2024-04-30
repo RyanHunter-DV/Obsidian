@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"c8588d5a253f0106","x":180,"y":-713,"width":1020,"height":400,"type":"group","label":"BLSeqPkg"},
+		{"id":"51841c2ae54eaccb","x":-720,"y":-713,"width":400,"height":400,"type":"group","label":"TestPkg"},
+		{"id":"5333c291b5625c8b","x":-240,"y":-713,"width":380,"height":400,"type":"group","label":"HLSeqPkg"},
+		{"id":"43bb6af76534daf2","x":200,"y":-680,"width":360,"height":120,"type":"text","text":"base level sequences that has pure simple usage to call registers to set rtl configurations or env configs."},
+		{"id":"92b1b7c207f966db","x":-220,"y":-680,"width":340,"height":120,"type":"text","text":"Application CgcSequence, high level sequences that call different base level sequences to organize a more complicate circumstance than the base sequences, can add more constraints that will be used in different situations."},
+		{"id":"7ce52462be60634b","x":-700,"y":-680,"width":350,"height":120,"type":"text","text":"CgcTest, can call base sequences or high level application sequences, with customized api called that supported by sequences."},
+		{"id":"0017315b01b57c6d","x":640,"y":-560,"width":250,"height":60,"type":"text","text":"CgcCpu0FreqSeq, extra config and constraint for generating pll0 frequency"},
+		{"id":"97a9f3516e1d0ed9","type":"text","text":"CgcCpu1FreqSeq","x":640,"y":-500,"width":250,"height":60},
+		{"id":"1745289268e233d6","x":640,"y":-440,"width":250,"height":60,"type":"text","text":"..."},
+		{"id":"361945968b8ef675","x":640,"y":-680,"width":250,"height":60,"type":"text","text":"CgcFracFreqSeqBase, frac pll base configure fields and constraints to generate a frequency"},
+		{"id":"fe49013450144ca8","type":"text","text":"CgcIntFreqSeqBase","x":920,"y":-680,"width":250,"height":60},
+		{"id":"dc2d2d7764cae19f","x":920,"y":-560,"width":250,"height":60,"type":"text","text":"CgcPciePhyFreqSeq"}
+	],
+	"edges":[
+		{"id":"565401d997fcf3b0","fromNode":"7ce52462be60634b","fromSide":"right","toNode":"92b1b7c207f966db","toSide":"left","label":"inst"},
+		{"id":"158612c6fa94b46b","fromNode":"92b1b7c207f966db","fromSide":"right","toNode":"43bb6af76534daf2","toSide":"left","label":"inst"},
+		{"id":"2a709e29ecbd79b5","fromNode":"0017315b01b57c6d","fromSide":"top","toNode":"361945968b8ef675","toSide":"bottom","label":"extends"},
+		{"id":"e11333ffe6b0243d","fromNode":"dc2d2d7764cae19f","fromSide":"top","toNode":"fe49013450144ca8","toSide":"bottom"}
+	]
+}

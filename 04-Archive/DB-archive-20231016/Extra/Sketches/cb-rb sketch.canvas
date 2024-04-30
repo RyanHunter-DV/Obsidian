@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"type":"text","text":"requires","id":"ef0ad100173aee3c","x":-285,"y":-60,"width":250,"height":60},
+		{"type":"text","text":"key info of ruby file","id":"f6a19b145b4cc955","x":-520,"y":-220,"width":250,"height":60},
+		{"type":"text","text":"class/module","id":"5966585417a7c7dd","x":-520,"y":60,"width":250,"height":60},
+		{"type":"text","text":"def","id":"0f4dbb96e2fce29d","x":-660,"y":220,"width":250,"height":60},
+		{"type":"text","text":"fields","id":"babcf1ec4b561a53","x":-285,"y":220,"width":250,"height":60},
+		{"type":"text","text":"global fields/def","id":"1b5804dad29632e7","x":-823,"y":-46,"width":250,"height":60},
+		{"id":"13d4bc3f7889e8ab","x":-735,"y":420,"width":400,"height":400,"type":"file","file":"Cards/Codelib/cb-rb format.md"},
+		{"id":"8383b9679e55d7e9","x":300,"y":133,"width":420,"height":327,"type":"text","text":"require/rhload ...\nclass xxxx\n\tfield ...\n \n\tdef xxxx\n\tend\nend\ndef xxx\nend"}
+	],
+	"edges":[
+		{"id":"1c51112c30a53424","fromNode":"f6a19b145b4cc955","fromSide":"bottom","toNode":"ef0ad100173aee3c","toSide":"top"},
+		{"id":"55b0bb43c7034273","fromNode":"f6a19b145b4cc955","fromSide":"bottom","toNode":"5966585417a7c7dd","toSide":"top"},
+		{"id":"7932286ba5bc3b27","fromNode":"5966585417a7c7dd","fromSide":"bottom","toNode":"0f4dbb96e2fce29d","toSide":"top"},
+		{"id":"d7129b172730580d","fromNode":"5966585417a7c7dd","fromSide":"right","toNode":"babcf1ec4b561a53","toSide":"top"},
+		{"id":"35553fd2d68251ac","fromNode":"f6a19b145b4cc955","fromSide":"bottom","toNode":"1b5804dad29632e7","toSide":"top"}
+	]
+}

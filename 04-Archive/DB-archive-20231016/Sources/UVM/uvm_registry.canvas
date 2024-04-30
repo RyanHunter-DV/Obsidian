@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"type":"group","id":"022c34c963b30bdd","x":860,"y":-540,"width":680,"height":400,"label":"registry creators"},
+		{"type":"text","text":"`uvm_registry_common#(Tregistry,Tcreator,Tcreated)`","id":"2f35a6d32f092b3b","x":-800,"y":-200,"width":600,"height":60},
+		{"type":"text","text":"`Tcreator.create_by_type(Tregistry::get()...)`","id":"56ccccf24d0f55dc","x":80,"y":-200,"width":505,"height":60}
+	],
+	"edges":[
+		{"id":"a44c7ba673fb123d","fromNode":"2f35a6d32f092b3b","fromSide":"right","toNode":"56ccccf24d0f55dc","toSide":"left","label":"API::create"}
+	]
+}

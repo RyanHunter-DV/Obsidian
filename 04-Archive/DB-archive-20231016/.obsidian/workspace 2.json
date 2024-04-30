@@ -1,0 +1,206 @@
+{
+  "main": {
+    "id": "72cfe0794850271f",
+    "type": "split",
+    "children": [
+      {
+        "id": "712ebaf2736c3ee6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b22490507e1c6395",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9ed52233a2b3331d",
+    "type": "split",
+    "children": [
+      {
+        "id": "99b0d74218d56c5e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d59569eb2280c25",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime"
+              }
+            }
+          },
+          {
+            "id": "57a2a318444035ac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ea65c5bfb85b8f74",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 228.5
+  },
+  "right": {
+    "id": "e9c0f90cdc666a3a",
+    "type": "split",
+    "children": [
+      {
+        "id": "f4a031ac4779a378",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eaa0a26bba9588ed",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "34616b36b9a855bf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c86059b012a48ba9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "978ea5971df77f41",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "5485c67bf17efbbc",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "6da8bef2e5c90a9f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "576a3663bf66cdce",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 276.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "b22490507e1c6395",
+  "lastOpenFiles": [
+    "Spaces/IC/rhFlow/UTB/backup0.md",
+    "Sources/english/shutterbug.md",
+    "Sources/english/apparatus.md",
+    "Spaces/IC/rhFlow/UTB/UTB-v1 Specification.md",
+    "Spaces/IC/rhFlow/UTB",
+    "Sources/english",
+    "Sources/PCIE-5.0 Protocol Copy.md",
+    "Sources/RISCV-2 Copy.md",
+    "Calendar/DONE/TestBuilder-backups.md",
+    "Calendar/DONE",
+    "Calendar/TODO",
+    "Sources/Sources.md",
+    "Spaces/IC/rhFlow/TestBuild/testBuilder-v1-Spec.md",
+    "Atlas/Logs/IC Projects.md",
+    "Atlas/Logs/Focused.md",
+    "Atlas/Logs/Bug Tracking.md",
+    "Spaces/IC/rhVM/rhuvmdbg-backup/RHUDBG-v2 Specification.md",
+    "Extra/Archived/rhRVCore/v1/rhRVCIFetcher/src-rhRVCIFetcher_arbitor.v-archive.md",
+    "Extra/Archived/rhRVCore/v1/rhRVCIFetcher/src-rhRVCIFetcher.v.md",
+    "Extra/Archived/rhRVCore/v1/rhRVCIFetcher/src-rhRVCIFetcher.v-archive.md",
+    "Extra/Archived/rhRVCore/v1/rhRVCIFetcher",
+    "Extra/Archived/rhRVCore/v1/arch-overview.md",
+    "Extra/Archived/rhRVCore/v1",
+    "Extra/Archived/rhRVCore/arch-overview.md",
+    "Extra/Archived/rhRVCore",
+    "Extra/Archived",
+    "Spaces/IC/rhFlow/TestBuild",
+    "Spaces/IC/codelib/cb-rb Specification.md",
+    "Cards/Codelib/cb-rb format.md",
+    "Extra/Sketches/cb-rb sketch.canvas",
+    "Cards/MDC/MDC doc rules.md",
+    "Cards/linux-shopt.md",
+    "Cards/MDC",
+    "Cards/Codelib/Codelib.md",
+    "Atlas/Logs/IC.md",
+    "Cards/Cards.md",
+    "Calendar/20230304.md"
+  ]
+}

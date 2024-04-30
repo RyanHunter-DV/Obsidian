@@ -1,0 +1,2 @@
+- the shutterbug uses panoramic camera
+- 

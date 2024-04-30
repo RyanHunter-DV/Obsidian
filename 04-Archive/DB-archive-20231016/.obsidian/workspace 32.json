@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "72cfe0794850271f",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b116b36e5973d44",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ecc65002f6ed99d4",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9ed52233a2b3331d",
+    "type": "split",
+    "children": [
+      {
+        "id": "99b0d74218d56c5e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d59569eb2280c25",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "57a2a318444035ac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ea65c5bfb85b8f74",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 286.5
+  },
+  "right": {
+    "id": "e9c0f90cdc666a3a",
+    "type": "split",
+    "children": [
+      {
+        "id": "f4a031ac4779a378",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eaa0a26bba9588ed",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "34616b36b9a855bf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c86059b012a48ba9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "978ea5971df77f41",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "5485c67bf17efbbc",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "6da8bef2e5c90a9f",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "576a3663bf66cdce",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 276.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "8d59569eb2280c25",
+  "lastOpenFiles": [
+    "Cards/Codelib/cb-sv features.md",
+    "Atlas/ProjectLogs/Programming.md",
+    "Cards/Codelib/cb-rb format.md",
+    "Cards/Codelib/Codelib.md",
+    "Cards/Cards.md",
+    "Spaces/IC/codelib/cb-rb Specification.md",
+    "Spaces/IC/codelib/v3",
+    "Atlas/Logs/IC Projects-back.md",
+    "Atlas/Atlas.md",
+    "Atlas/ProjectLogs",
+    "Atlas/Logs/Project Collection.md",
+    "Atlas/Logs/Focused.md",
+    "Atlas/Logs/question-interview-20230315.md",
+    "Atlas/Logs/Career Plan.md",
+    "Atlas/Logs/Bug Tracking.md",
+    "Sources/UVM/factory/uvm_factory.md",
+    "Sources/UVM/factory/uvm_override_type.md",
+    "Sources/UVM/registry/uvm_registry_common.md",
+    "Sources/UVM/registry/uvm_component_registry.md",
+    "Sources/UVM/registry/uvm_registry_component_creator.md",
+    "Sources/UVM/factory",
+    "Sources/UVM/uvm_registry.canvas",
+    "Sources/UVM/registry",
+    "Sources/UVM/uvm_registry.md",
+    "Sources/UVM/default_sequence.md",
+    "Sources/SV/ConditionOfFor.md",
+    "Sources/SV",
+    "Sources/UVM/Top.canvas",
+    "Sources/UVM/uvm_coreservice_t.md",
+    "Sources/UVM/uvm_global.md",
+    "Spaces/IC/vips/ResetGen/v2/Architecture.md",
+    "Spaces/IC/vips/ResetGen/v2/example.md",
+    "Spaces/IC/vips/ResetGen/v2/Features & Usage.md",
+    "Sources/UVM",
+    "Spaces/IC/vips/ResetGen/v2",
+    "Spaces/IC/vips/ResetGen/v2-archive/ResetGenArchitecture.canvas",
+    "Spaces/IC/vips/ResetGen/v2-archive/DevelopPanel.canvas",
+    "Spaces/IC/rhFlow/UTB/v1/MainDevelop.canvas",
+    "Spaces/IC/rhFlow/VB/v1",
+    "Spaces/IC/vips/ResetGen/v2-archive",
+    "Spaces/IC/rhFlow/UTB/v1",
+    "Spaces/IC/rhFlow/UTB/Architecture.canvas",
+    "Extra/Sketches/cb-rb sketch.canvas"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+	"nodes":[
+		{"type":"group","id":"3560e2d3291a1e18","x":-640,"y":1480,"width":4320,"height":2200,"color":"5","label":"RhdCall only usecase"},
+		{"type":"group","id":"27252dc4997dfa2a","x":-420,"y":-340,"width":2180,"height":1400,"color":"6","label":"RhdCall with breakpoint"},
+		{"type":"group","id":"fa81656c8871865b","x":640,"y":460,"width":1080,"height":520,"label":"Pools"},
+		{"type":"text","text":"RhdCall(method,(arg,...))","id":"3b687d6d943a48c2","x":-365,"y":1540,"width":290,"height":60},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/RhdMacros.svh.md","subpath":"#define `RhdCall(method,args)`","id":"6b266031b903d5bb","x":-600,"y":1710,"width":820,"height":350},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/RhdCore.svh.md","subpath":"#task `run()`","id":"ff5cbe0c5dc602f2","x":529,"y":1710,"width":631,"height":290},
+		{"id":"99d32ad09c887c50","x":-406,"y":2191,"width":432,"height":85,"type":"text","text":"#TODO, require RhdProbesPool::dump(\"all\")"},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/threads/RhdThreadsProcessor.svh.md","subpath":"#task `startMonitor()`","id":"64958d34b878c2f1","x":1280,"y":1690,"width":560,"height":260},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/threads/RhdThread.svh.md","subpath":"#`task await()`","id":"778f4b295dc32add","x":1950,"y":2140,"width":400,"height":260},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/threads/RhdThreadsProcessor.svh.md","subpath":"#task `monitor(RhdThread p)`","id":"e0fa65b634fbf08d","x":2020,"y":1560,"width":660,"height":320},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/threads/RhdThread.svh.md","subpath":"#`func string stateMessage()`","id":"4ba441914faac494","x":2350,"y":2140,"width":400,"height":260},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/threads/RhdThread.svh.md","subpath":"#func `bool hasBreakpoint()`","id":"d8d482a8af2a10e7","x":529,"y":2420,"width":631,"height":189},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/probe/RhdProbePool.svh.md","subpath":"#func `static void dump(string scope=\"all\")`","id":"3ed52119a6b33bab","x":680,"y":520,"width":400,"height":400},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/threads/RhdThread.svh.md","id":"45ec4663acd00489","x":1200,"y":-210,"width":480,"height":400},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/RhdMacros.svh.md","subpath":"#define `RhdCall(method,args)`","id":"8cd7294a7e163fc8","x":-20,"y":-179,"width":760,"height":338},
+		{"type":"text","text":"RhdCall(method,(arg,...))","id":"468a3fdfb352f860","x":-400,"y":-40,"width":290,"height":60},
+		{"type":"text","text":"breakpoint now only supported by RhdCall","id":"6b1fd0bc795541c9","x":-380,"y":-260,"width":250,"height":60},
+		{"id":"cd5f78946184967d","x":1380,"y":2420,"width":400,"height":189,"type":"file","file":"Quest/infra/RhDebugger/v1/src/threads/RhdThreadsProcessor.svh.md","subpath":"#func `bool hasInjectedBreakpoint(string id,int count)`"},
+		{"id":"2ccc0b4b6d970417","x":2150,"y":2515,"width":600,"height":225,"type":"file","file":"Quest/infra/RhDebugger/v1/src/threads/RhdThreadsProcessor.svh.md","subpath":"#func `void init(RhdUserInterface _ui_)`"},
+		{"id":"f794ac381d5ec7c9","x":2900,"y":2480,"width":400,"height":400,"type":"file","file":"Quest/infra/RhDebugger/v1/src/RhdUserInterface.svh.md"}
+	],
+	"edges":[
+		{"id":"32cb6a77b5afb020","fromNode":"468a3fdfb352f860","fromSide":"right","toNode":"8cd7294a7e163fc8","toSide":"left"},
+		{"id":"50040898aab9c3db","fromNode":"8cd7294a7e163fc8","fromSide":"right","toNode":"45ec4663acd00489","toSide":"left","label":"p=new()"},
+		{"id":"fc222ef19bbff763","fromNode":"6b1fd0bc795541c9","fromSide":"bottom","toNode":"468a3fdfb352f860","toSide":"top"},
+		{"id":"76c9d52fa62b68f9","fromNode":"3b687d6d943a48c2","fromSide":"bottom","toNode":"6b266031b903d5bb","toSide":"top","label":"call macro"},
+		{"id":"de3ca761f0f6dcb3","fromNode":"6b266031b903d5bb","fromSide":"right","toNode":"ff5cbe0c5dc602f2","toSide":"left","label":"internal call top to monitor"},
+		{"id":"0acd0255334ec635","fromNode":"ff5cbe0c5dc602f2","fromSide":"right","toNode":"64958d34b878c2f1","toSide":"left"},
+		{"id":"db6097b2fcff3659","fromNode":"64958d34b878c2f1","fromSide":"right","toNode":"e0fa65b634fbf08d","toSide":"left","label":"call monitor"},
+		{"id":"1b1b5b4572efbb14","fromNode":"e0fa65b634fbf08d","fromSide":"bottom","toNode":"778f4b295dc32add","toSide":"top","label":"p.await"},
+		{"id":"7dc81938d40a4948","fromNode":"e0fa65b634fbf08d","fromSide":"bottom","toNode":"4ba441914faac494","toSide":"top","label":"p.stateMessage"},
+		{"id":"2869cb26fb6bdb2d","fromNode":"8cd7294a7e163fc8","fromSide":"right","toNode":"3ed52119a6b33bab","toSide":"top","label":"dump(\"all\")"},
+		{"id":"19e3ef8baf38fd77","fromNode":"6b266031b903d5bb","fromSide":"right","toNode":"d8d482a8af2a10e7","toSide":"left","label":"p.hasBreakpoint"},
+		{"id":"129dc4ae44ae4cb8","fromNode":"6b266031b903d5bb","fromSide":"bottom","toNode":"99d32ad09c887c50","toSide":"top"},
+		{"id":"ab60b0a5872f9eba","fromNode":"d8d482a8af2a10e7","fromSide":"right","toNode":"cd5f78946184967d","toSide":"left"},
+		{"id":"d9518bfed1e28133","fromNode":"cd5f78946184967d","fromSide":"right","toNode":"2ccc0b4b6d970417","toSide":"left","label":"setup breakpoints through ui"},
+		{"id":"ca7d7abebc84535e","fromNode":"2ccc0b4b6d970417","fromSide":"right","toNode":"f794ac381d5ec7c9","toSide":"left"}
+	]
+}

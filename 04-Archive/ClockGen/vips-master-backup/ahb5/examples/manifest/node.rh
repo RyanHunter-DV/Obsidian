@@ -1,0 +1,18 @@
+config :masterOnly, :tool=>:xlm do
+	## component :uvm
+	## component :rhuvmdbg
+	## component :Rhlib
+	component :RhAhb5Vip
+	component :masterEnv
+	component :MasterTests
+	component :masterTB
+	## dpihome = "#{ENV['UVMHOME']}/dpi"
+	## compopt :xlm,"-I#{dpihome} -cc #{dpihome}/uvm_dpi.cc"
+end
+
+config :omos do
+	component :RhAhb5Vip
+	component :omosEnv
+	component :omosTests
+	component :omosTB
+end

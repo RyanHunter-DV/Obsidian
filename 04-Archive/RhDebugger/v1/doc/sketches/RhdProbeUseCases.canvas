@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"type":"text","text":"probe previously used for:\n- display current variable values when RhdProbe placed.\n- temporarily inject a value by cmd options.","id":"48fb8603e9aebce6","x":-391,"y":-660,"width":761,"height":141},
+		{"type":"text","text":"new prefer feature can be:\n- variable dump at certain breakpoint.\n- dynamical value injection at certain breakpoint.","id":"0b720b96dcb1277d","x":-391,"y":-471,"width":761,"height":171},
+		{"type":"text","text":"breakpoint:\n1. place bk in certain code line.\n2. trigger by cmd option.","id":"6e801a9218fd18e8","x":647,"y":-471,"width":613,"height":171},
+		{"type":"text","text":"```systemverilog\ntask RhQLpiDriver::processPowerControlTrans();\n\t`Rhdline(seq_item_port.get_next_item(req));\n\t// normal dump of an object.\n\t`RhdInfo($sformatf(\"getting request from test\\n%s\",req.sprint()))\n\t`Rhdline(config.sync(req.delay));\n\t`RhdInfo($sformatf(\"start driving trans after delay(%0d)\",req.delay));\n\tbegin\n\t\tduration=req.lpDuration;\n// position: get_full_name,line,count, every time this point executed, to\n// check if has matched bk options in ui.\n\t\t`breakpoint // here the duration can be injected if user want to.\n\t\t`Rhdif(duration==-1,duration=config.genLpDuration();)\n\t\t`RhdIf(req.powerOn==0,\n\t\t\tdrivePowerOffRequest(...);\n\t\t\tlienb;\n\t\t\tlinec;\n\t\t\t...\n\t\t)\n\t\t`RhdElseIf(condition,\n\t\t\txxxx;\n\t\t\txxxx;\n\t\t\t...\n\t\t)\n\t\t`RhdElse(\n\t\t\txxx;\n\t\t\txxx\n\t\t)\n\tend\n\tseq_item_port.item_done();\nendtask\n```","id":"a07187ec337a3b69","x":563,"y":-140,"width":782,"height":459},
+		{"type":"text","text":"begin\nbk = BkPool::find(fullname,line)\nif ui.matchbk(bk) begin\n\t// do matched actions\n\tbk.probes.inject(xxx);\n\tbk.probes.dump(xxx);\nend\nbk.count++\nend","id":"3143d99634e328e7","x":1600,"y":10,"width":548,"height":159},
+		{"type":"text","text":"ui.matchbk(bk):\nif found, matches: (fullname,line,count)\n\tbk.addProbes(probname,value)","id":"d873431a12d4d378","x":2338,"y":34,"width":502,"height":135},
+		{"type":"text","text":"--bk-set 'fullname,line,count'","id":"c6c1ef10665065c5","x":1630,"y":-380,"width":489,"height":136},
+		{"type":"text","text":"config.file:\nbk: fullname,line,count\ndump:\n\tfullname(path.varname),line...\n\txxxx\nbk: 3000ns\ndump:\n\txxxx\n ","id":"a4052c916f6995ad","x":2300,"y":-399,"width":471,"height":174},
+		{"id":"a74d7d72f86b189a","x":-259,"y":-1678,"width":250,"height":60,"type":"text","text":"breakpoint"},
+		{"id":"b5155cd853b61f63","x":180,"y":-2040,"width":560,"height":140,"type":"text","text":"RhdProbe\nRhdCreateProbe..."}
+	],
+	"edges":[
+		{"id":"745fe580909cddb5","fromNode":"0b720b96dcb1277d","fromSide":"right","toNode":"6e801a9218fd18e8","toSide":"left"},
+		{"id":"5df3a9e8b11b9028","fromNode":"a07187ec337a3b69","fromSide":"right","toNode":"3143d99634e328e7","toSide":"left"},
+		{"id":"f34bb7d2197a5d6f","fromNode":"c6c1ef10665065c5","fromSide":"bottom","toNode":"3143d99634e328e7","toSide":"top"},
+		{"id":"929942f97877fab1","fromNode":"a74d7d72f86b189a","fromSide":"top","toNode":"b5155cd853b61f63","toSide":"left","label":"dump(\"all\")"}
+	]
+}

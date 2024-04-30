@@ -1,0 +1,27 @@
+{
+	"nodes":[
+		{"type":"text","text":"specify breakpoint manually","id":"c61c75ea0a6fb786","x":-787,"y":-860,"width":347,"height":60},
+		{"type":"text","text":"- RhdBreakpoint can be placed at any line in code.\n- triggered by cmd options.\n- once triggered, can dump all reigstered probe in current pool.\n- ","id":"4fae53debfa160c8","x":-286,"y":-932,"width":520,"height":132},
+		{"type":"text","text":"implicit breakpoint injected by RhdCall","id":"88c64952187012ee","x":-800,"y":40,"width":427,"height":60},
+		{"type":"text","text":"details in [[RhdThreadCases.canvas|RhdThreadCases]]","id":"7cbed2fd73c24b24","x":-253,"y":40,"width":428,"height":62},
+		{"type":"text","text":"--bk-set 'fullname,line,count'","id":"e6409b92134fb829","x":-286,"y":-600,"width":520,"height":60},
+		{"type":"text","text":"place in normal code segment.\n```\n`RhdBreakpoint(xxx)\n```","id":"07f83c4f018e19b4","x":400,"y":-964,"width":440,"height":196},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/RhdMacros.svh.md","subpath":"#define `RhdBreakpoint()`","id":"29cd66dc3ed2e55b","x":1000,"y":-983,"width":660,"height":234},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/breakpoint/RhdBreakpointProcessor.svh.md","subpath":"#func `static RhdBreakpoint create(xxx)`","id":"fd974f01eedcae8f","x":1900,"y":-983,"width":580,"height":210},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/breakpoint/RhdBreakpoint.svh.md","subpath":"#func `void incr()`","id":"9e8d8cd4fbd4e6e5","x":2621,"y":-620,"width":633,"height":200},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/breakpoint/RhdBreakpoint.svh.md","subpath":"#new","id":"897934c2d4967622","x":2621,"y":-994,"width":591,"height":232},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/breakpoint/RhdBreakpoint.svh.md","subpath":"#func `bit triggered()`","id":"8d00e704a535fcb2","x":2621,"y":-1400,"width":555,"height":217},
+		{"type":"file","file":"Quest/infra/RhDebugger/v1/src/probe/RhdProbePool.svh.md","id":"9a019ef27aa542c2","x":1900,"y":-260,"width":614,"height":186,"subpath":"#func `static void dump(string scope=\"all\")`"}
+	],
+	"edges":[
+		{"id":"824ce89c454ca484","fromNode":"88c64952187012ee","fromSide":"right","toNode":"7cbed2fd73c24b24","toSide":"left"},
+		{"id":"b6be673a9ecb1b6f","fromNode":"4fae53debfa160c8","fromSide":"right","toNode":"07f83c4f018e19b4","toSide":"left","label":"place"},
+		{"id":"9c5cd2057a979379","fromNode":"4fae53debfa160c8","fromSide":"bottom","toNode":"e6409b92134fb829","toSide":"top","label":"trigger"},
+		{"id":"28c6eb26da019f76","fromNode":"07f83c4f018e19b4","fromSide":"right","toNode":"29cd66dc3ed2e55b","toSide":"left"},
+		{"id":"9182f0dc0f799431","fromNode":"29cd66dc3ed2e55b","fromSide":"right","toNode":"fd974f01eedcae8f","toSide":"left"},
+		{"id":"556cb9d55d64eb1e","fromNode":"fd974f01eedcae8f","fromSide":"right","toNode":"897934c2d4967622","toSide":"left"},
+		{"id":"a79183f248d4e3a2","fromNode":"29cd66dc3ed2e55b","fromSide":"right","toNode":"8d00e704a535fcb2","toSide":"left"},
+		{"id":"86e58b4752b95895","fromNode":"29cd66dc3ed2e55b","fromSide":"right","toNode":"9a019ef27aa542c2","toSide":"left"},
+		{"id":"c47dc4a4ac0cf4f0","fromNode":"29cd66dc3ed2e55b","fromSide":"right","toNode":"9e8d8cd4fbd4e6e5","toSide":"left"}
+	]
+}

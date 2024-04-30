@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"type":"group","id":"4894530d023f1e41","x":-556,"y":-468,"width":3436,"height":2308,"color":"#adaff0","label":"chip_tb_new"},
+		{"type":"group","id":"4dd2882cd57f861f","x":-420,"y":-320,"width":1760,"height":500,"color":"5","label":"env"},
+		{"type":"text","text":"ref module","id":"c8234009bd4a358a","x":380,"y":-40,"width":320,"height":120},
+		{"type":"text","text":"apb monitor(ApbUvc)","id":"3fec46690982b960","x":20,"y":-40,"width":240,"height":60},
+		{"type":"text","text":"scoreboard\n- clock freq check","id":"952bc8062b4df922","x":900,"y":-40,"width":262,"height":120},
+		{"type":"text","text":"cgc RTL","id":"316e7f86f8b38768","x":380,"y":-220,"width":250,"height":60},
+		{"type":"text","text":"pm RTL","id":"74d7858e4ba71056","x":20,"y":-220,"width":250,"height":60},
+		{"type":"text","text":"clockUVC","id":"42f17568b33e8549","x":740,"y":-220,"width":250,"height":60},
+		{"type":"text","text":"s5 RTL","id":"c33faafcae2f193b","x":-340,"y":-220,"width":250,"height":60}
+	],
+	"edges":[
+		{"id":"20d92a737b436b4e","fromNode":"3fec46690982b960","fromSide":"right","toNode":"c8234009bd4a358a","toSide":"left","label":"req"},
+		{"id":"511eeea018ebb9fa","fromNode":"c8234009bd4a358a","fromSide":"right","toNode":"952bc8062b4df922","toSide":"left","label":"exp"},
+		{"id":"abfc08bfbadee979","fromNode":"74d7858e4ba71056","fromSide":"right","toNode":"316e7f86f8b38768","toSide":"left"},
+		{"id":"6c570af9e1bdcb90","fromNode":"74d7858e4ba71056","fromSide":"bottom","toNode":"3fec46690982b960","toSide":"top","label":"monitor"},
+		{"id":"3b23c062d1085089","fromNode":"316e7f86f8b38768","fromSide":"right","toNode":"42f17568b33e8549","toSide":"left"},
+		{"id":"3974f1e7631b6f2b","fromNode":"42f17568b33e8549","fromSide":"bottom","toNode":"952bc8062b4df922","toSide":"top","label":"act"},
+		{"id":"5a0febfc7eb9ca4c","fromNode":"c33faafcae2f193b","fromSide":"right","toNode":"74d7858e4ba71056","toSide":"left"}
+	]
+}

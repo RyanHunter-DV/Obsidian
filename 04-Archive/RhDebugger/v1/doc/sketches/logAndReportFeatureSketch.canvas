@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"type":"text","text":"```systemverilog\ntask RhQLpiDriver::processPowerControlTrans();\n\t`Rhdline(seq_item_port.get_next_item(req));\n\t// normal dump of an object.\n\t`RhdInfo($sformatf(\"getting request from test\\n%s\",req.sprint()))\n\t`Rhdline(config.sync(req.delay));\n\t`RhdInfo($sformatf(\"start driving trans after delay(%0d)\",req.delay));\n\tbegin\n\t\tduration=req.lpDuration;\n\t\t`Rhdif(duration==-1,duration=config.genLpDuration();)\n\t\t//`RhdInfo($sformatf(\"generate lpDuration(%0d)\",duration))\n\t\t//if (req.powerOn==0) drivePowerOffRequest(req.ignoreQActive,duration);\n\t\t//else drivePowerUpRequest(duration);\n\t\t`RhdIf(req.powerOn==0,\n\t\t\tdrivePowerOffRequest(...);\n\t\t\tlienb;\n\t\t\tlinec;\n\t\t\t...\n\t\t)\n\t\t`RhdElseIf(condition,\n\t\t\txxxx;\n\t\t\txxxx;\n\t\t\t...\n\t\t)\n\t\t`RhdElse(\n\t\t\txxx;\n\t\t\txxx\n\t\t)\n\tend\n\tseq_item_port.item_done();\nendtask\n```","id":"e42bb8bf2be153ac","x":260,"y":-40,"width":782,"height":459},
+		{"type":"text","text":"+define+DevelopStage / +define+PublishStage\n+rhdebug=[scope],[scope2]...\n'uvm_test_top.tbEnv.enva,uvm_test_top.tbEnv.envb'\n-- enables all objects within enva and envb.","id":"abcc4aaa4413e04a","x":264,"y":1500,"width":591,"height":240},
+		{"type":"text","text":"if (!ui.enabled(get_full_name()))","id":"a6c76f79e5ded357","x":363,"y":1856,"width":393,"height":50}
+	],
+	"edges":[
+		{"id":"c70ea4a211be545f","fromNode":"abcc4aaa4413e04a","fromSide":"bottom","toNode":"a6c76f79e5ded357","toSide":"top"}
+	]
+}

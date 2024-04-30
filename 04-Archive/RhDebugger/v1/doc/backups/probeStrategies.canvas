@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"type":"group","id":"fc5c1939a8f0b8da","x":-700,"y":-1180,"width":980,"height":700,"color":"5","label":"createProbe"},
+		{"type":"group","id":"0a6b9c4c6622a019","x":-700,"y":-1600,"width":1720,"height":300,"color":"6","label":"probeDetector flow chart"},
+		{"type":"text","text":"User:\n`po = RhdProbes->getProbe(paht,LINE)`\n`po.value = V`\n`po.processOverride(ui)`","id":"8de9a1db28307f95","x":-680,"y":-1560,"width":460,"height":230},
+		{"type":"text","text":"getProbe","id":"b41e7b4413bbff7e","x":73,"y":-1560,"width":365,"height":60},
+		{"type":"text","text":"","id":"6d73bec05a381928","x":73,"y":-1395,"width":365,"height":65},
+		{"type":"text","text":"User:\n```\nRhdProbes#(type)::create(get_full_name(),varname,__LINE__,default)\n```","id":"08b1341189237e09","x":-660,"y":-1140,"width":640,"height":120},
+		{"type":"text","text":"```systemverilog\nclass RhdProbe#(type T)\n\tpath = ...\n\tpos  = ...\nclass RhdProbes#(type T)\n\tstatic RhdProbe#(T) pool[$];\n\tstatic create() -> store to pool.\n\n```\n","id":"a69ed19c6402cdc2","x":-660,"y":-920,"width":640,"height":220}
+	],
+	"edges":[
+		{"id":"9c559b942e7d1dcc","fromNode":"08b1341189237e09","fromSide":"bottom","toNode":"a69ed19c6402cdc2","toSide":"top","label":"RhdProbes::create()"},
+		{"id":"f9d912bde40af915","fromNode":"8de9a1db28307f95","fromSide":"right","toNode":"b41e7b4413bbff7e","toSide":"left","label":"RhdProbes::getProbe"},
+		{"id":"f6f7b2ed3009db5e","fromNode":"8de9a1db28307f95","fromSide":"right","toNode":"6d73bec05a381928","toSide":"left","label":"probe.processOverride"}
+	]
+}

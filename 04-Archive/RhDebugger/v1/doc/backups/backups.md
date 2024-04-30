@@ -1,0 +1,17 @@
+- use MACRO: DISABLE_RHDINFO to skip compiling the whole codes.
+- RhdInfo, used to replace the normal uvm_info, these information will be logged, but no screen print.
+	- uvm_info will be used as normal information that being printed on screen.
+- RhdCaller, to get the caller from $stacktrace API.
+	- #TBD, need details
+- RhdCall(func), func is the calling function, to log a call action into log.
+	- the file and line arg used as a default value defined by macro.
+	- also support dynamically disable the thread by run-time options.
+- RhdPrint, screen print only, with configurable print file location or not. #TBD 
+- when '+RHDEBUG' enabled, all invokes of RhdInfo will be logged.
+	- `+RHDEBUG`, an option to enable/disable the RhDebugger dynamically without recompiling.
+	- support partial enable, by arguments like: `+RHDEBUG="uvm_test_top.*"`;
+---
+- insert a file by dynamical option which will be executed in running, can change cfg file and run again without re-compiling.
+	- how can sv execute codes from a txt file? #TBD , if this problem cannot solve, then this idea is not applicable.
+	- 
+ 

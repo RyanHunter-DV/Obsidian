@@ -1,0 +1,1 @@
+this Area folder is used to store the knowledge that I've understood and tested.

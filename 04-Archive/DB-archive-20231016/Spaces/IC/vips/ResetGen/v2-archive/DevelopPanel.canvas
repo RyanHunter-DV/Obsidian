@@ -1,0 +1,21 @@
+{
+	"nodes":[
+		{"type":"group","id":"0c0ffd2fd36d03c1","x":260,"y":-1020,"width":1580,"height":1660,"color":"#bea0e4","label":"Architecture"},
+		{"type":"group","id":"31a890f158a2a9ef","x":280,"y":-400,"width":1520,"height":1000,"label":"ResetGen[Agent]"},
+		{"type":"group","id":"584e87ba273bff00","x":-640,"y":-1020,"width":800,"height":1660,"color":"2","label":"Features And UseCases"},
+		{"type":"group","id":"940cbf523fd0ec3b","x":280,"y":-960,"width":1520,"height":500,"label":"Standalone"},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/resetGenIf.sv.md","id":"e9043f5a2ceec349","x":300,"y":-920,"width":400,"height":400},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/resetGen.svh.md","id":"ebe4c2d4d8ad2dde","x":300,"y":-360,"width":400,"height":920},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/Features.md","id":"e6a041e2d29779bc","x":-600,"y":-960,"width":720,"height":600},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/UseCases.md","id":"32a5540e36f84992","x":-600,"y":-160,"width":720,"height":760},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/resetGenTrans.svh.md","id":"a297dc5a2a125278","x":820,"y":-920,"width":400,"height":400},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/resetGen.sv.md","id":"27a0471cd09c451a","x":270,"y":-1680,"width":980,"height":440,"color":"#8940e2"},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/resetGenDriver.svh.md","id":"987e3a3ad8db36dc","x":760,"y":160,"width":400,"height":400},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/resetGenMonitor.svh.md","id":"bb29a4ff4b8a9a15","x":1240,"y":160,"width":440,"height":400},
+		{"type":"file","file":"Spaces/IC/vips/ResetGen/v2-archive/resetGenSeqr.svh.md","id":"c01c470218431cd1","x":760,"y":-360,"width":400,"height":400}
+	],
+	"edges":[
+		{"id":"f6dd8b86801e2846","fromNode":"c01c470218431cd1","fromSide":"bottom","toNode":"987e3a3ad8db36dc","toSide":"top"},
+		{"id":"842eaae0f1cf1a22","fromNode":"0c0ffd2fd36d03c1","fromSide":"top","toNode":"27a0471cd09c451a","toSide":"bottom"}
+	]
+}

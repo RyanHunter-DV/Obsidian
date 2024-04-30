@@ -1,0 +1,6 @@
+- package
+- product
+- team, organization, number
+- what will i do
+- company road map
+- company investment

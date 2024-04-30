@@ -1,0 +1,3 @@
+some proprietary brands of dog food.
+The coperate networks at that time are proprietary and disconnected from each other.
+She came in with such a proprietary haste as ...

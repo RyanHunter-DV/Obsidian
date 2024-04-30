@@ -1,0 +1,1 @@
+This can build a config table, but it actually has the same feature with building object.

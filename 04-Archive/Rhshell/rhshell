@@ -1,0 +1,12 @@
+#! /usr/bin/env ruby
+require 'Core';
+
+
+## main(), 
+def main(); ##{{{
+	puts "#{__FILE__}:start main... ..."
+	core = Core.new();
+	return core.run();
+end ##}}}
+
+exit main();

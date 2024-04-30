@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"9de110ee55a31920","x":-445,"y":-60,"width":250,"height":60,"type":"text","text":"user: RhDebugger.new"},
+		{"type":"text","text":"UserInterface.new()","id":"933a9773aa79f3e8","x":-550,"y":120,"width":460,"height":100},
+		{"type":"text","text":"OptionParser opt=new();\nopt.on....\nopt.on...\n...\nopt.parse\n","id":"7a164ad5e81d605a","x":200,"y":-2,"width":457,"height":172}
+	],
+	"edges":[
+		{"id":"5c3d88fbcf0e1334","fromNode":"933a9773aa79f3e8","fromSide":"right","toNode":"7a164ad5e81d605a","toSide":"left","label":"UserInterface.new()"},
+		{"id":"1aa7fdb750fcc18e","fromNode":"9de110ee55a31920","fromSide":"bottom","toNode":"933a9773aa79f3e8","toSide":"top","label":"new()"}
+	]
+}

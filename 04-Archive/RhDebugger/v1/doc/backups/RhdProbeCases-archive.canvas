@@ -1,0 +1,26 @@
+{
+	"nodes":[
+		{"id":"8b57d82044c2aba3","x":-40,"y":-1400,"width":680,"height":600,"type":"group","label":"RhdProbe"},
+		{"id":"58f3fb84da172be4","x":-640,"y":-1400,"width":520,"height":560,"type":"group","label":"RhdCreateProbe"},
+		{"id":"4ed197c159f3a0c8","x":-640,"y":-700,"width":480,"height":520,"type":"group","label":"RhdProbes::dump"},
+		{"id":"ed394bead3fec255","x":-550,"y":-1360,"width":320,"height":60,"type":"text","text":"RhdCreateProbe(type,name)"},
+		{"id":"7ca1d070b0e40980","x":-600,"y":-1180,"width":420,"height":60,"type":"text","text":"type name = RhdProbesPool::create(...)"},
+		{"id":"6bb10d7ba47c04d5","x":-537,"y":-1020,"width":295,"height":140,"type":"text","text":"RhdProbe p=new...\np.value = default...\np.id = ....\npool.push_back(p)"},
+		{"id":"2d31c765cc6a8bbe","x":-560,"y":-640,"width":280,"height":60,"type":"text","text":"RhdProbes::dump(\"path\")"},
+		{"id":"57ffacb528080909","x":-560,"y":-460,"width":280,"height":60,"type":"text","text":"search RhdProbe in pool"},
+		{"id":"8abaa442e0724769","x":-610,"y":-320,"width":380,"height":60,"type":"text","text":"display current vlaue of RhdProbe"},
+		{"id":"b489774ecbd7de6f","x":20,"y":-1330,"width":360,"height":60,"type":"text","text":"RhdProbe(name)"},
+		{"id":"14f1292fc53dde06","x":20,"y":-1150,"width":580,"height":90,"type":"text","text":"p = RhdProbesPool::getProbe(this.get_full_name(),LINE,name)"},
+		{"id":"6fa3b92e47b6d839","x":20,"y":-1010,"width":580,"height":60,"type":"text","text":"ui.injectProbe(p)"},
+		{"id":"94989f15ea50baa5","x":185,"y":-910,"width":250,"height":60,"type":"text","text":"p.dump();"}
+	],
+	"edges":[
+		{"id":"8aef04037a787621","fromNode":"2d31c765cc6a8bbe","fromSide":"bottom","toNode":"57ffacb528080909","toSide":"top"},
+		{"id":"e77216f95d752e9c","fromNode":"57ffacb528080909","fromSide":"bottom","toNode":"8abaa442e0724769","toSide":"top"},
+		{"id":"db79f59e9ed13beb","fromNode":"ed394bead3fec255","fromSide":"bottom","toNode":"7ca1d070b0e40980","toSide":"top"},
+		{"id":"63d1692ff6b5ac95","fromNode":"7ca1d070b0e40980","fromSide":"bottom","toNode":"6bb10d7ba47c04d5","toSide":"top"},
+		{"id":"d4206f2b92ec0c79","fromNode":"b489774ecbd7de6f","fromSide":"bottom","toNode":"14f1292fc53dde06","toSide":"top"},
+		{"id":"92dc42412ea642eb","fromNode":"14f1292fc53dde06","fromSide":"bottom","toNode":"6fa3b92e47b6d839","toSide":"top"},
+		{"id":"7e14e8b7bff720f8","fromNode":"6fa3b92e47b6d839","fromSide":"bottom","toNode":"94989f15ea50baa5","toSide":"top"}
+	]
+}

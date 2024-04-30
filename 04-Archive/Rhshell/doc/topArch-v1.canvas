@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"880c4555f9ef02a8","type":"text","text":"user inputs:\ncall rhshell, then the interactive mode will start","x":-700,"y":-600,"width":400,"height":120},
+		{"id":"c56f261426a8b628","type":"file","file":"04-Archive/Rhshell/doc/Core-v1.md","x":40,"y":-420,"width":620,"height":400,"subpath":"#run"},
+		{"id":"2cdd8784abb67207","x":939,"y":-420,"width":561,"height":400,"type":"file","file":"04-Archive/Rhshell/doc/UserPanel-v1.md","subpath":"#execute"},
+		{"id":"8075051c1ce99a5d","x":939,"y":200,"width":561,"height":400,"type":"file","file":"04-Archive/Rhshell/doc/ExecutePanel-v1.md"},
+		{"id":"04b72e377d20acbb","type":"text","text":"`>> exit`, call exit directly","x":-710,"y":-1000,"width":420,"height":100},
+		{"id":"b79b9e2b74720dff","type":"text","text":"prompt, the output render","x":939,"y":820,"width":250,"height":60},
+		{"id":"febbd14562002dbb","x":40,"y":-980,"width":620,"height":340,"type":"file","file":"04-Archive/Rhshell/doc/Core-v1.md","subpath":"#trigger(event symbol, message string)"}
+	],
+	"edges":[
+		{"id":"cda65b383e5405c0","fromNode":"880c4555f9ef02a8","fromSide":"right","toNode":"04b72e377d20acbb","toSide":"right","label":"exit program"},
+		{"id":"26d725a278e99fa1","fromNode":"880c4555f9ef02a8","fromSide":"right","toNode":"c56f261426a8b628","toSide":"left","label":"exe"},
+		{"id":"57c693fba0e1a054","fromNode":"c56f261426a8b628","fromSide":"right","toNode":"2cdd8784abb67207","toSide":"left","label":"start"},
+		{"id":"2a7dac5cac8e74a4","fromNode":"2cdd8784abb67207","fromSide":"top","toNode":"febbd14562002dbb","toSide":"right","label":"core.trigger(event,message)"},
+		{"id":"9c766b705cd15e77","fromNode":"c56f261426a8b628","fromSide":"right","toNode":"8075051c1ce99a5d","toSide":"left","label":"start"}
+	]
+}

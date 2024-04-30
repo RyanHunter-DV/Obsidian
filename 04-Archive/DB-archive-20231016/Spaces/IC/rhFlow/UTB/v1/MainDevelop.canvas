@@ -1,0 +1,8 @@
+{
+	"nodes":[
+		{"type":"group","id":"5a100685d0be25de","x":-300,"y":-360,"width":660,"height":640,"label":"Features And UseCases"},
+		{"type":"group","id":"95a2a8915d24e4ef","x":-991,"y":-340,"width":651,"height":620,"label":"Architecture"},
+		{"type":"text","text":"![[Spaces/IC/rhFlow/UTB/v1/UTB-v1 Specification]]","id":"19402dc63dcb35c1","x":-280,"y":-340,"width":620,"height":600}
+	],
+	"edges":[]
+}

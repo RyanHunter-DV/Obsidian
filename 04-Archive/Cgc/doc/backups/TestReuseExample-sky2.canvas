@@ -1,0 +1,18 @@
+{
+	"nodes":[
+		{"id":"116915ed461a0fca","x":-480,"y":-440,"width":340,"height":60,"type":"text","text":"PmCgcS5BaseSeq"},
+		{"type":"text","text":"CgcTestSeq\nbody:\nCgcFracRtlConfigSeq s\ns = xxx::type_id::createxxx\ns.fixeFrac...\ns.freq(xxx);\ns.randomize()...\ns.start(p_sequencer.cgcw)","id":"b835893bf2024373","x":-480,"y":-260,"width":340,"height":200},
+		{"id":"96d33d2543143389","x":-6,"y":-360,"width":250,"height":60,"type":"text","text":"CgcEnvConfigSeq"},
+		{"id":"b038d69999c236ea","x":-6,"y":-270,"width":426,"height":220,"type":"text","text":"CgcFracPllConfigSeq\nbits frac\nreal freq\nbits fbdiv\n...\nconstraints ...\ndeclare_p_sequencer(axi4_seqr)\nbody:\naxiseq seq...\nseq.start(p_sequencer)"},
+		{"id":"5fc2bbb16e2e969c","x":-483,"y":-600,"width":346,"height":60,"type":"text","text":"psequencer->tbEnv.vseqr"},
+		{"id":"bd5e5139bf9a8eeb","x":-75,"y":-738,"width":470,"height":138,"type":"text","text":"TbEnv:\nvseqr.cgcWrite = pmEnv.axi4Uvc.wr_seqr\nvseqr.cgcRead = pmEnv.axi4Uvc.rd_seqr\n..."},
+		{"id":"63cc6ac7a20b7142","x":47,"y":40,"width":320,"height":60,"type":"text","text":"CgcRtlConfigSeqExt"}
+	],
+	"edges":[
+		{"id":"f2af85257a0f6348","fromNode":"116915ed461a0fca","fromSide":"bottom","toNode":"b835893bf2024373","toSide":"top","label":"extends"},
+		{"id":"bc990ad12def0fac","fromNode":"b835893bf2024373","fromSide":"right","toNode":"b038d69999c236ea","toSide":"left","label":"inst"},
+		{"id":"cdb401fd8832a857","fromNode":"b835893bf2024373","fromSide":"right","toNode":"96d33d2543143389","toSide":"left","label":"inst"},
+		{"id":"6b03e455fa7e062b","fromNode":"63cc6ac7a20b7142","fromSide":"top","toNode":"b038d69999c236ea","toSide":"bottom","label":"optional extend and override"},
+		{"id":"d99d181b655580e6","fromNode":"116915ed461a0fca","fromSide":"top","toNode":"5fc2bbb16e2e969c","toSide":"bottom","label":"field"}
+	]
+}

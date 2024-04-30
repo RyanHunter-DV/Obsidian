@@ -1,0 +1,198 @@
+{
+  "main": {
+    "id": "e1c2886e507c9552",
+    "type": "split",
+    "children": [
+      {
+        "id": "cf8ef8c4cf5aa4cf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9a5bb10637ad4c73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cards/Swift/sticky.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "38f6aa07e9243e5e",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "b98af62b339e8200",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "byCreatedTime"
+          }
+        }
+      },
+      {
+        "id": "6a7add754f4f2eb2",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "8d4ac8e68c83818c",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "40b4303663cd28f3",
+        "type": "leaf",
+        "state": {
+          "type": "starred",
+          "state": {}
+        }
+      },
+      {
+        "id": "48b973eb7e2c5ab3",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "cec1e42773b1ad2e",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "25f74bd3aeab8b14",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Cards/Swift/sticky.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "6b85364f0345a458",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Cards/Swift/sticky.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "c3dc65d31c756b35",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "Cards/Swift/sticky.md"
+          }
+        }
+      },
+      {
+        "id": "8843370ddb1dd263",
+        "type": "leaf",
+        "state": {
+          "type": "todo",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "9a5bb10637ad4c73",
+  "lastOpenFiles": [
+    "Cards/Swift/Key questions been recorded to be solved later.md",
+    "Cards/Swift/sticky.md",
+    "Cards/Swift/functions.md",
+    "Cards/Swift/class.md",
+    "Calendar/20231010.md",
+    "Cards/Swift/Array.md",
+    "Cards/Swift/String.md",
+    "Cards/Swift/Set.md",
+    "Cards/Swift/conditions.md",
+    "Calendar/20230702.md",
+    "Calendar/20230707.md",
+    "Spaces/IC/rhFlow/rsim/v5/build.rb.md",
+    "Calendar/20231008.md",
+    "Spaces/IC/rhFlow/rsim/v5/RhDassExample.vsrc.md",
+    "Spaces/IC/rhFlow/rsim/v5/Architecture.canvas",
+    "Calendar/20231006.md",
+    "Spaces/IC/rhFlow/rsim/v5/component.rb.md",
+    "Extra/Templates/dailyRecordTemplate.md",
+    "Calendar/202300627.md",
+    "Calendar/20230621.md",
+    "Calendar/DONE/TestBuilder-backups.md",
+    "Calendar/TODO/20230626.md",
+    "Calendar/Calendar.md",
+    "Cards/Cards.md",
+    "Cards/Lua-Nvim/setupHighlights.md",
+    "Calendar/TODO/en-conduct.md",
+    "Cards/ProjectCards/fsim-v5-examples.md",
+    "Cards/DVB/UVMB-Topology.canvas",
+    "Sources/UVM/Top.canvas",
+    "Sources/UVM/uvm_registry.canvas",
+    "Spaces/IC/rhFlow/UTB/v1/MainDevelop.canvas",
+    "Spaces/IC/vips/ResetGen/v2/ResetGenArchitecture.canvas",
+    "Spaces/IC/vips/ResetGen/v2/DevelopPanel.canvas",
+    "Spaces/IC/rhFlow/UTB/Architecture.canvas",
+    "Sources/english",
+    "Calendar/DONE",
+    "Calendar/TODO",
+    "Spaces/IC/MDC/v2/readme",
+    "Extra/Sketches/cb-rb sketch.canvas",
+    "Spaces/IC/rhVM/rhuvmdbg-backup/v2",
+    "Spaces/IC/rhVM/rhuvmdbg-backup/readme",
+    "Spaces/IC/rhVM/rhuvmdbg-backup",
+    "Spaces/IC/rhVM/dvp-backup/readme",
+    "Spaces/IC/rhVM/dvp-backup"
+  ]
+}
