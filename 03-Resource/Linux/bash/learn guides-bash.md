@@ -1,0 +1,4 @@
+- alias commands: [[alias-bash]]
+- conditional operations: [[conditional_syntax-bash]]
+- function declare: [[function-bash]]
+- loops:

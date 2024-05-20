@@ -4,18 +4,49 @@
     "type": "split",
     "children": [
       {
-        "id": "41ee993b454f246c",
-        "type": "tabs",
+        "id": "6f553909bb983534",
+        "type": "split",
         "children": [
           {
-            "id": "160beb31ce4efd96",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
+            "id": "7eb0efaac49c0eb2",
+            "type": "tabs",
+            "dimension": 28.942307692307693,
+            "children": [
+              {
+                "id": "bfb39dc9f2528b51",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "03-Resource/Linux/bash/learn guides-bash.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "93f7145e904cdabb",
+            "type": "tabs",
+            "dimension": 71.0576923076923,
+            "children": [
+              {
+                "id": "bb7d2a5298417a24",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "03-Resource/Linux/bash/for_loops-bash.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
           }
-        ]
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -81,6 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "03-Resource/Linux/bash/for_loops-bash.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "03-Resource/Linux/bash/for_loops-bash.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,15 +151,31 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "03-Resource/Linux/bash/for_loops-bash.md"
+              }
             }
           }
         ],
         "currentTab": 3
+      },
+      {
+        "id": "a324c72fc29dd7f6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "160beb31ce4efd96",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 440.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -135,11 +184,29 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "377d57c68db0f49e",
+  "active": "bb7d2a5298417a24",
   "lastOpenFiles": [
+    "03-Resource/Linux/bash/conditional_syntax-bash.md",
+    "03-Resource/Linux/bash/for_loops-bash.md",
+    "Pasted image 20240520112505.png",
+    "Pasted image 20240520112444.png",
+    "03-Resource/Linux/bash/variables-bash.md",
+    "03-Resource/Linux/bash/display_functions-bash.md",
+    "Pasted image 20240520105115.png",
+    "03-Resource/Linux/bash/heredoc-bash.md",
+    "Pasted image 20240520104059.png",
+    "03-Resource/Linux/bash/arguments_from_cmd-bash.md",
+    "03-Resource/Linux/bash/learn guides-bash.md",
+    "03-Resource/Linux/bash/function-bash.md",
+    "03-Resource/Linux/bash/alias-bash.md",
+    "Pasted image 20240520101243.png",
+    "Pasted image 20240520095949.png",
+    "Pasted image 20240520095417.png",
+    "03-Resource/Linux/csh",
     "03-Resource/Linux/bash",
     "01-Project/RhCmp/v1/doc/Sketch ideas.md",
     "RhCmp-sketch.jpg",
@@ -161,8 +228,6 @@
     "01-Project/Rsim/v1/docs/examples/uart/src/rtl/uartrx.vsrc",
     "01-Project/Rsim/v1/docs/examples/uart/src/rtl/rx.rh",
     "01-Project/CsuPm/doc/sky1p/~$y1p_CsuPm_TestPlan.docx",
-    "01-Project/Rsim/v1/docs/examples/uart/src/interface/busDefinition.rh",
-    "01-Project/Rsim/v1/docs/examples/uart/src/interface",
     "01-Project/Rsim/v1/docs/architecture/GeneratorChain.md",
     "01-Project/Rsim/v1/docs/architecture/Generator.canvas",
     "03-Resource/Linux/printFormats.md",
@@ -175,16 +240,8 @@
     "01-Project/CsuPm/doc/PmCgcS5BaseSeqlib-sky2.md",
     "01-Project/Cgc/doc/CgcBaseSeqlib-sky2.md",
     "01-Project/Rhshell/doc/Core-v1.md",
-    "01-Project/Rhshell/doc/UserPanel-v1.md",
-    "01-Project/Rhshell/doc/CommonPanel-v1.md",
-    "01-Project/Rhshell/doc/ExecutePanel-v1.md",
-    "01-Project/Rhshell/doc/UserInput-v1.md",
-    "01-Project/Smmu/doc/SmmuTcuTestPlan-v1.md",
-    "00-Inbox/002-20231023.md",
-    "00-Inbox/001-20231016.md",
     "01-Project/RhDebugger/v1/doc/sketches/logAndReportFeatureSketch.canvas",
     "01-Project/RhDebugger/v1/doc/sketches/RhdProbeUseCases.canvas",
-    "01-Project/RhDebugger/v1/doc/backups/UI.md",
     "01-Project/RhDebugger/v1/doc/backups/setupflow.canvas",
     "01-Project/RhDebugger/v1/doc/backups/RhdThreadCases.canvas"
   ]
