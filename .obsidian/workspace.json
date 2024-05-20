@@ -37,7 +37,7 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "03-Resource/Linux/bash/for_loops-bash.md",
+                    "file": "03-Resource/Makefile/function-make.md",
                     "mode": "source",
                     "source": false
                   }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03-Resource/Linux/bash/for_loops-bash.md",
+                "file": "03-Resource/Makefile/function-make.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03-Resource/Linux/bash/for_loops-bash.md",
+                "file": "03-Resource/Makefile/function-make.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03-Resource/Linux/bash/for_loops-bash.md"
+                "file": "03-Resource/Makefile/function-make.md"
               }
             }
           }
@@ -190,6 +190,10 @@
   },
   "active": "bb7d2a5298417a24",
   "lastOpenFiles": [
+    "Pasted image 20240520191810.png",
+    "03-Resource/Linux/bash/for_loops-bash.md",
+    "03-Resource/Makefile/function-make.md",
+    "03-Resource/Makefile",
     "03-Resource/Linux/bash/function-bash.md",
     "03-Resource/Linux/bash/alias-bash.md",
     "02-Area/bootenv/readme.md",
@@ -197,7 +201,6 @@
     "03-Resource/Linux/bash/conditional_syntax-bash.md",
     "02-Area/bootenv",
     "Pasted image 20240520185116.png",
-    "03-Resource/Linux/bash/for_loops-bash.md",
     "Pasted image 20240520112505.png",
     "Pasted image 20240520112444.png",
     "03-Resource/Linux/bash/variables-bash.md",
@@ -230,7 +233,6 @@
     "01-Project/Rsim/v1/lib/Rsim.rb.md",
     "01-Project/Rsim/v1/docs/examples/uart/src/rtl/UartTop.vsrc",
     "01-Project/Rsim/v1/docs/examples/uart/src/rtl/uartrx.vsrc",
-    "01-Project/Rsim/v1/docs/examples/uart/src/rtl/rx.rh",
     "01-Project/Rsim/v1/docs/architecture/GeneratorChain.md",
     "01-Project/Rsim/v1/docs/architecture/Generator.canvas",
     "03-Resource/Linux/printFormats.md",
@@ -240,7 +242,6 @@
     "01-Project/Rhshell/doc/000-ProjectBrief-v1.md",
     "01-Project/Rhshell/doc/001-topArch-v1.canvas",
     "01-Project/Cgc/doc/CgcTests-sky2.md",
-    "01-Project/CsuPm/doc/PmCgcS5BaseSeqlib-sky2.md",
     "01-Project/RhDebugger/v1/doc/sketches/logAndReportFeatureSketch.canvas",
     "01-Project/RhDebugger/v1/doc/sketches/RhdProbeUseCases.canvas",
     "01-Project/RhDebugger/v1/doc/backups/setupflow.canvas",
