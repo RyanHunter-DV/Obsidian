@@ -31,3 +31,6 @@ fi
 # use `((xxx))` as conditional judgement
 ![[Pasted image 20240520112444.png]]
 ![[Pasted image 20240520112505.png]]
+
+# case
+![[Pasted image 20240520185116.png]]
