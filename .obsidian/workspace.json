@@ -4,49 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "6f553909bb983534",
-        "type": "split",
+        "id": "93f7145e904cdabb",
+        "type": "tabs",
         "children": [
           {
-            "id": "7eb0efaac49c0eb2",
-            "type": "tabs",
-            "dimension": 28.942307692307693,
-            "children": [
-              {
-                "id": "bfb39dc9f2528b51",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "03-Resource/Linux/bash/learn guides-bash.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
+            "id": "bb7d2a5298417a24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "03-Resource/Linux/bash/conditional_syntax-bash.md",
+                "mode": "source",
+                "source": false
               }
-            ]
-          },
-          {
-            "id": "93f7145e904cdabb",
-            "type": "tabs",
-            "dimension": 71.0576923076923,
-            "children": [
-              {
-                "id": "bb7d2a5298417a24",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "03-Resource/Makefile/function-make.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
+            }
           }
-        ],
-        "direction": "horizontal"
+        ]
       }
     ],
     "direction": "vertical"
@@ -112,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03-Resource/Makefile/function-make.md",
+                "file": "03-Resource/Linux/bash/conditional_syntax-bash.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03-Resource/Makefile/function-make.md",
+                "file": "03-Resource/Linux/bash/conditional_syntax-bash.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "03-Resource/Makefile/function-make.md"
+                "file": "03-Resource/Linux/bash/conditional_syntax-bash.md"
               }
             }
           }
@@ -190,11 +163,16 @@
   },
   "active": "bb7d2a5298417a24",
   "lastOpenFiles": [
-    "Pasted image 20240520191810.png",
     "03-Resource/Linux/bash/for_loops-bash.md",
-    "03-Resource/Makefile/function-make.md",
-    "03-Resource/Makefile",
+    "03-Resource/Linux/bash/variables-bash.md",
+    "03-Resource/Linux/csh/special variables with dollar.md",
     "03-Resource/Linux/bash/function-bash.md",
+    "03-Resource/Linux/bash/arguments_from_cmd-bash.md",
+    "03-Resource/Linux/file command.md",
+    "03-Resource/Linux/find file descriptor of current process.md",
+    "03-Resource/Makefile/function-make.md",
+    "Pasted image 20240520191810.png",
+    "03-Resource/Makefile",
     "03-Resource/Linux/bash/alias-bash.md",
     "02-Area/bootenv/readme.md",
     "Pasted image 20240520190140.png",
@@ -203,12 +181,10 @@
     "Pasted image 20240520185116.png",
     "Pasted image 20240520112505.png",
     "Pasted image 20240520112444.png",
-    "03-Resource/Linux/bash/variables-bash.md",
     "03-Resource/Linux/bash/display_functions-bash.md",
     "Pasted image 20240520105115.png",
     "03-Resource/Linux/bash/heredoc-bash.md",
     "Pasted image 20240520104059.png",
-    "03-Resource/Linux/bash/arguments_from_cmd-bash.md",
     "03-Resource/Linux/bash/learn guides-bash.md",
     "Pasted image 20240520101243.png",
     "Pasted image 20240520095949.png",
@@ -216,7 +192,6 @@
     "03-Resource/Linux/csh",
     "03-Resource/Linux/bash",
     "01-Project/RhCmp/v1/doc/Sketch ideas.md",
-    "RhCmp-sketch.jpg",
     "01-Project/RhCmp/v1/doc/RhCmp-v1 Specification.md",
     "01-Project/RhCmp/v1/doc",
     "01-Project/RhCmp/v1",
@@ -239,9 +214,7 @@
     "01-Project/Cgc/doc/TestArchitecture-sky2.canvas",
     "01-Project/Cgc/doc/envArch-sky2.canvas",
     "01-Project/Cgc/doc/testStrategy-sky2.canvas",
-    "01-Project/Rhshell/doc/000-ProjectBrief-v1.md",
     "01-Project/Rhshell/doc/001-topArch-v1.canvas",
-    "01-Project/Cgc/doc/CgcTests-sky2.md",
     "01-Project/RhDebugger/v1/doc/sketches/logAndReportFeatureSketch.canvas",
     "01-Project/RhDebugger/v1/doc/sketches/RhdProbeUseCases.canvas",
     "01-Project/RhDebugger/v1/doc/backups/setupflow.canvas",
